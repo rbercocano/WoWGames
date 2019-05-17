@@ -1,0 +1,14 @@
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\bin\Debug\WowGames.exe.config
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\bin\Debug\WowGames.exe
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\bin\Debug\WowGames.pdb
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.csprojAssemblyReference.cache
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.frmLogin.resources
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.frmMain.resources
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.FrmRelCompras.resources
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.FrmRixty.resources
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.Properties.Resources.resources
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.csproj.GenerateResource.cache
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.exe
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.pdb
+C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.FrmBalance.resources
