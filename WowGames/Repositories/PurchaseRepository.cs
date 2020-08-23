@@ -44,7 +44,7 @@ namespace WowGames.Repositories
             using (var sqlCon = new SqlConnection(_connectionString))
             {
                 sqlCon.Open();
-                using (var cmd = new SqlCommand($"SELECT * FROM [PURCHASE] {where} ORDER BY PurchaseDate DESC", sqlCon))
+                using (var cmd = new SqlCommand($"SELECT P.*, PP.Partner FROM [PURCHASE] P JOIN [PARTNER] PP ON P.PartnerId = PP.PartnerId {where} ORDER BY PurchaseDate DESC", sqlCon))
                 {
                     if (!string.IsNullOrEmpty(sku))
                         cmd.Parameters.Add(new SqlParameter("sku", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = sku, Size = 50 });
@@ -60,8 +60,8 @@ namespace WowGames.Repositories
                             SuggestedPrice = dr["SuggestedSalePrice"].ToString(),
                             PaidPrice = dr["PaidPrice"].ToString(),
                             Sku = dr["Sku"].ToString(),
-                            PurchaseDate = Convert.ToDateTime(dr["PurchaseDate"])
-
+                            PurchaseDate = Convert.ToDateTime(dr["PurchaseDate"]),
+                            Partner = dr["Partner"].ToString(),
                         });
                     }
                 }

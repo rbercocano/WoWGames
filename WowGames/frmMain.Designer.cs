@@ -34,6 +34,7 @@
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aquiPagaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,23 +46,24 @@
             this.consultasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // partnerToolStripMenuItem
             // 
             this.partnerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MnRixty});
-            this.partnerToolStripMenuItem.Font = new System.Drawing.Font("Museo Sans For Dell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MnRixty,
+            this.aquiPagaToolStripMenuItem});
+            this.partnerToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.partnerToolStripMenuItem.Name = "partnerToolStripMenuItem";
-            this.partnerToolStripMenuItem.Size = new System.Drawing.Size(88, 27);
+            this.partnerToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
             this.partnerToolStripMenuItem.Text = "Partner";
             // 
             // MnRixty
             // 
             this.MnRixty.Name = "MnRixty";
-            this.MnRixty.Size = new System.Drawing.Size(131, 28);
+            this.MnRixty.Size = new System.Drawing.Size(224, 30);
             this.MnRixty.Text = "Rixty";
             this.MnRixty.Click += new System.EventHandler(this.MnRixty_Click);
             // 
@@ -70,24 +72,31 @@
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.comprasToolStripMenuItem,
             this.extratoToolStripMenuItem});
-            this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Museo Sans For Dell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.consultasToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(113, 27);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(114, 29);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // comprasToolStripMenuItem
             // 
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(178, 30);
             this.comprasToolStripMenuItem.Text = "Compras";
             this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
             // extratoToolStripMenuItem
             // 
             this.extratoToolStripMenuItem.Name = "extratoToolStripMenuItem";
-            this.extratoToolStripMenuItem.Size = new System.Drawing.Size(216, 28);
+            this.extratoToolStripMenuItem.Size = new System.Drawing.Size(178, 30);
             this.extratoToolStripMenuItem.Text = "Extrato";
             this.extratoToolStripMenuItem.Click += new System.EventHandler(this.extratoToolStripMenuItem_Click);
+            // 
+            // aquiPagaToolStripMenuItem
+            // 
+            this.aquiPagaToolStripMenuItem.Name = "aquiPagaToolStripMenuItem";
+            this.aquiPagaToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.aquiPagaToolStripMenuItem.Text = "Aqui Paga";
+            this.aquiPagaToolStripMenuItem.Click += new System.EventHandler(this.aquiPagaToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -116,5 +125,6 @@
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem extratoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aquiPagaToolStripMenuItem;
     }
 }

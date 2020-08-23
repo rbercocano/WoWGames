@@ -32,7 +32,6 @@ namespace WowGames
                 return;
             }
             txtLog.Text = "";
-            var sucesso = false;
             string responseLog;
             try
             {
@@ -66,7 +65,7 @@ namespace WowGames
                     if (ack.Equals("SUCCESS"))
                     {
                         responseLog = $"SUCESSO | PREÇO SUGERIDO: ${precoSugerido} | PREÇO COMPRA: ${seuPreco}";
-                        sucesso = true;
+                        
                     }
                     else
                     {

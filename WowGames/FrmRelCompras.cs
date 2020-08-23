@@ -18,6 +18,7 @@ namespace WowGames
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Token", Name = "Token", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SuggestedPrice", Name = "Preço Sugerido", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PaidPrice", Name = "Valor Compra", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Partner", Name = "Parceiro", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

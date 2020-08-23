@@ -12,3 +12,22 @@ C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.
 C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.exe
 C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.pdb
 C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.FrmBalance.resources
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csprojAssemblyReference.cache
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmLogin.resources
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.frmMain.resources
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmBalance.resources
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmRelCompras.resources
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmRixty.resources
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.Properties.Resources.resources
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csproj.GenerateResource.cache
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csproj.CoreCompileInputs.cache
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.exe
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.pdb
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\WowGames.exe.config
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\WowGames.exe
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\WowGames.pdb
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\Newtonsoft.Json.dll
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\Newtonsoft.Json.xml
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csproj.CopyComplete
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.frmAquiPaga.resources
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.frmCompra.resources

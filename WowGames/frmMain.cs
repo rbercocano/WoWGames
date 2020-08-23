@@ -39,5 +39,12 @@ namespace WowGames
             frm.ShowDialog();
 
         }
+
+        private void aquiPagaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmAquiPaga();
+            frm.ShowDialog();
+
+        }
     }
 }

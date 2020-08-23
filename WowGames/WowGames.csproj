@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -47,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAquiPaga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAquiPaga.Designer.cs">
+      <DependentUpon>frmAquiPaga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompra.Designer.cs">
+      <DependentUpon>frmCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,12 +92,34 @@
     <Compile Include="FrmRixty.Designer.cs">
       <DependentUpon>FrmRixty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AquiPaga\AuthenticationResponse.cs" />
+    <Compile Include="Models\AquiPaga\AuthenticationRequest.cs" />
+    <Compile Include="Models\AquiPaga\PaymentResultData.cs" />
+    <Compile Include="Models\AquiPaga\Product.cs" />
+    <Compile Include="Models\AquiPaga\ProductOptionsList.cs" />
+    <Compile Include="Models\AquiPaga\TransactionRequest.cs" />
+    <Compile Include="Models\AquiPaga\ProductType.cs" />
+    <Compile Include="Models\AquiPaga\ProductRequest.cs" />
+    <Compile Include="Models\AquiPaga\ProductTypeRequest.cs" />
+    <Compile Include="Models\AquiPaga\ProductResponse.cs" />
+    <Compile Include="Models\AquiPaga\ProductTypeResponse.cs" />
+    <Compile Include="Models\AquiPaga\ResponseBase.cs" />
+    <Compile Include="Models\AquiPaga\TransactionResponse.cs" />
     <Compile Include="Models\BalanceDetail.cs" />
+    <Compile Include="Models\ProductDetails.cs" />
     <Compile Include="Models\Purchase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxy\AquiPagaProxy.cs" />
     <Compile Include="Repositories\BalanceRepository.cs" />
     <Compile Include="Repositories\PurchaseRepository.cs" />
+    <Compile Include="Session.cs" />
+    <EmbeddedResource Include="frmAquiPaga.resx">
+      <DependentUpon>frmAquiPaga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompra.resx">
+      <DependentUpon>frmCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +144,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -122,5 +160,6 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
