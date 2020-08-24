@@ -17,9 +17,9 @@ namespace WowGames.Proxy
         {
             lock (objLock)
             {
-                if (!string.IsNullOrEmpty(Session.Instance.AquiPagaToken) &&
-                    DateTime.Now < Session.Instance.AquiPagaTokenExpiration)
-                    return Session.Instance.AquiPagaToken;
+                //if (!string.IsNullOrEmpty(Session.Instance.AquiPagaToken) &&
+                //    DateTime.Now < Session.Instance.AquiPagaTokenExpiration)
+                //    return Session.Instance.AquiPagaToken;
                 using (var client = new HttpClient())
                 {
                     var expiresAt = DateTime.Now.AddSeconds(50);
@@ -40,8 +40,8 @@ namespace WowGames.Proxy
                         if (!result.OperationSucceeded)
                             throw new Exception($"ERRO AO CHAMAR API (/Authenticate) AQUI PAGA - {result.ErrorText}");
 
-                        Session.Instance.AquiPagaToken = result.Token;
-                        Session.Instance.AquiPagaTokenExpiration = expiresAt;
+                        //Session.Instance.AquiPagaToken = result.Token;
+                        //Session.Instance.AquiPagaTokenExpiration = expiresAt;
                         return result.Token;
                     }
                 }
