@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WowGames.Models;
@@ -94,6 +95,7 @@ namespace WowGames
             dtResult.Columns.Add("Message");
 
             var proxy = new AquiPagaProxy();
+            var totalSucesso = 0;
             Parallel.For(0, qtd, (x) =>
             {
                 var row = dtResult.NewRow();
@@ -107,6 +109,7 @@ namespace WowGames
                     row[3] = result.Reference.ToString();
                     row[4] = result.SerialNumber.ToString();
                     row[5] = string.Join(Environment.NewLine, result.Receipt);
+                    Interlocked.Increment(ref totalSucesso);
                     repository.Add(new Purchase
                     {
 
@@ -131,6 +134,8 @@ namespace WowGames
                 dtResult.Rows.Add(row);
             });
             dgResult.DataSource = dtResult;
+            lblSucesso.Text = $"{totalSucesso}/{qtd}";
+            lblValor.Text = $"{totalSucesso * (productDetails.Preco ?? 0):C}";
         }
     }
 }

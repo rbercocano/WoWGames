@@ -12,7 +12,6 @@ C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.
 C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.exe
 C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.pdb
 C:\Users\Rodrigo.RODRIGO-NOTE\source\repos\WowGames\WowGames\obj\Debug\WowGames.FrmBalance.resources
-E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csprojAssemblyReference.cache
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmLogin.resources
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.frmMain.resources
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmBalance.resources

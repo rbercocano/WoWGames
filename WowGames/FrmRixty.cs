@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Globalization;
+using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using WowGames.Models;
@@ -13,6 +16,12 @@ namespace WowGames
         public FrmRixty()
         {
             InitializeComponent();
+            dgvCompras.AutoGenerateColumns = false;
+            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PurchaseDate", Name = "Data Compra", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Sku", Name = "SKU", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Serial", Name = "Serial", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Token", Name = "Token", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -31,7 +40,7 @@ namespace WowGames
                 MessageBox.Show("Informe o SKU", "Atenção", MessageBoxButtons.OK);
                 return;
             }
-            txtLog.Text = "";
+            var data = new List<Purchase>();
             string responseLog;
             try
             {
@@ -65,20 +74,44 @@ namespace WowGames
                     if (ack.Equals("SUCCESS"))
                     {
                         responseLog = $"SUCESSO | PREÇO SUGERIDO: ${precoSugerido} | PREÇO COMPRA: ${seuPreco}";
-                        
+                        var p = new Purchase
+                        {
+                            PaidPrice = seuPreco,
+                            PartnerId = 1,
+                            SuggestedPrice = precoSugerido,
+                            PurchaseDate = DateTime.Now,
+                            Sku = sku
+                        };
+                        data.Add(p);
                     }
                     else
                     {
                         responseLog = $"ERRO: {System.Net.WebUtility.UrlDecode(errMsg)}";
+                        data.Add(new Purchase
+                        {
+                            Token = responseLog,
+                            Serial = "ERRO",
+                            PurchaseDate = DateTime.Now,
+                            Sku = "ERRO"
+                        });
                     }
+                    lblValor.Text = "";
+                    lblSucesso.Text = "";
                 }
             }
             catch (Exception exception)
             {
                 responseLog = $"ERRO: {exception.Message}";
+                data.Add(new Purchase
+                {
+                    Token = responseLog,
+                    Serial = "ERRO",
+                    PurchaseDate = DateTime.Now,
+                    Sku = "ERRO"
+                });
             }
+            dgvCompras.DataSource = data;
 
-            txtLog.Text += responseLog + Environment.NewLine;
         }
 
         private void btnComprar_Click(object sender, System.EventArgs e)
@@ -94,11 +127,10 @@ namespace WowGames
                 return;
             }
 
-            txtLog.Text = "";
+            var data = new List<Purchase>();
             var qtd = Convert.ToInt32(txtQtd.Text.Trim());
             for (int i = 0; i < qtd; i++)
             {
-                var sucesso = false;
                 string responseLog;
                 try
                 {
@@ -138,7 +170,7 @@ namespace WowGames
                         if (ack.Equals("Success", StringComparison.InvariantCultureIgnoreCase))
                         {
                             responseLog = $"SUCESSO |  PREÇO COMPRA: {seuPreco} | TOKEN: {token} | SERIAL: {serial}";
-                            repository.Add(new Purchase
+                            var p = new Purchase
                             {
                                 PaidPrice = seuPreco,
                                 PartnerId = 1,
@@ -147,21 +179,39 @@ namespace WowGames
                                 Serial = serial,
                                 PurchaseDate = DateTime.Now,
                                 Sku = sku
-                            });
-                            sucesso = true;
+                            };
+                            data.Add(p);
+                            repository.Add(p);
                         }
                         else
                         {
                             responseLog = $"ERRO: {System.Net.WebUtility.UrlDecode(errMsg)}";
+                            data.Add(new Purchase
+                            {
+                                Token = responseLog,
+                                Serial = "ERRO",
+                                PurchaseDate = DateTime.Now,
+                                Sku = "ERRO"
+                            });
                         }
                     }
                 }
                 catch (Exception exception)
                 {
                     responseLog = $"ERRO: {exception.Message}";
+                    data.Add(new Purchase
+                    {
+                        Token = responseLog,
+                        Serial = "ERRO",
+                        PurchaseDate = DateTime.Now,
+                        Sku = "ERRO"
+                    });
                 }
-                txtLog.Text += responseLog + Environment.NewLine;
             }
+            var sucess = data.Where(d => d.Serial != "ERRO");
+            lblValor.Text = $"{sucess.Sum(d => Convert.ToDecimal(d.PaidPrice, CultureInfo.InvariantCulture)):C}";
+            lblSucesso.Text = $"{sucess.Count()}/{qtd}";
+            dgvCompras.DataSource = data;
         }
 
     }
