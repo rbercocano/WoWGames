@@ -126,7 +126,7 @@ namespace WowGames
                 {
                     Nome = row.Cells[0].Value.ToString(),
                     Descricao = row.Cells[1].Value.ToString(),
-                    Preco = row.Cells[3].Value != null ? Convert.ToDouble(row.Cells[3].Value) : new double?(),
+                    Preco = row.Cells[3].Value.ToString() != "" ? Convert.ToDouble(row.Cells[3].Value) : new double?(),
                     ProductTypeCode = row.Cells[4].Value.ToString(),
                     ProviderCode = row.Cells[5].Value.ToString(),
                     ProductCode = row.Cells[6].Value.ToString(),

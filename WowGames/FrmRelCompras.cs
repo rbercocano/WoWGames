@@ -7,11 +7,12 @@ namespace WowGames
 {
     public partial class FrmRelCompras : Form
     {
-        private PurchaseRepository repository = new PurchaseRepository();
+        private readonly PurchaseRepository repository = new PurchaseRepository();
         public FrmRelCompras()
         {
             InitializeComponent();
             dgvCompras.AutoGenerateColumns = false;
+            dgvCompras.ReadOnly = true;
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PurchaseDate", Name = "Data Compra", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Sku", Name = "SKU", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Serial", Name = "Serial", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
@@ -19,6 +20,9 @@ namespace WowGames
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SuggestedPrice", Name = "Preço Sugerido", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PaidPrice", Name = "Valor Compra", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Partner", Name = "Parceiro", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TransactionId", Name = "Transação", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Receipt", Name = "Recibo", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dgvCompras.Columns[0].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss";
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)

@@ -113,6 +113,7 @@
     <Compile Include="Proxy\AquiPagaProxy.cs" />
     <Compile Include="Repositories\BalanceRepository.cs" />
     <Compile Include="Repositories\PurchaseRepository.cs" />
+    <Compile Include="Security\RixtySignature.cs" />
     <Compile Include="Session.cs" />
     <EmbeddedResource Include="frmAquiPaga.resx">
       <DependentUpon>frmAquiPaga.cs</DependentUpon>

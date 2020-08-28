@@ -13,5 +13,7 @@ namespace WowGames.Models
         public int PartnerId { get; set; }
         public string Partner { get; set; }
         public string Sku { get; set; }
+        public string Receipt { get; set; }
+        public string TransactionId { get; set; }
     }
 }

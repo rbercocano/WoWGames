@@ -17,10 +17,14 @@ namespace WowGames
         {
             InitializeComponent();
             dgvCompras.AutoGenerateColumns = false;
+            dgvCompras.AllowUserToAddRows = false;
+            dgvCompras.ReadOnly = true;
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PurchaseDate", Name = "Data Compra", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Sku", Name = "SKU", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Serial", Name = "Serial", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Token", Name = "Token", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PaidPrice", Name = "Seu Preço", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SuggestedPrice", Name = "Preço Sugerido", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
 
         }
 
@@ -92,7 +96,9 @@ namespace WowGames
                             Token = responseLog,
                             Serial = "ERRO",
                             PurchaseDate = DateTime.Now,
-                            Sku = "ERRO"
+                            Sku = "ERRO",
+                            PaidPrice = "ERRO",
+                            SuggestedPrice = "ERRO"
                         });
                     }
                     lblValor.Text = "";
@@ -107,7 +113,9 @@ namespace WowGames
                     Token = responseLog,
                     Serial = "ERRO",
                     PurchaseDate = DateTime.Now,
-                    Sku = "ERRO"
+                    Sku = "ERRO",
+                    PaidPrice = "ERRO",
+                    SuggestedPrice = "ERRO"
                 });
             }
             dgvCompras.DataSource = data;
@@ -191,7 +199,9 @@ namespace WowGames
                                 Token = responseLog,
                                 Serial = "ERRO",
                                 PurchaseDate = DateTime.Now,
-                                Sku = "ERRO"
+                                Sku = "ERRO",
+                                PaidPrice = "ERRO",
+                                SuggestedPrice = "ERRO",
                             });
                         }
                     }
@@ -204,7 +214,9 @@ namespace WowGames
                         Token = responseLog,
                         Serial = "ERRO",
                         PurchaseDate = DateTime.Now,
-                        Sku = "ERRO"
+                        Sku = "ERRO",
+                        PaidPrice = "ERRO",
+                        SuggestedPrice = "ERRO",
                     });
                 }
             }

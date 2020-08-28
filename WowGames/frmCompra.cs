@@ -18,6 +18,7 @@ namespace WowGames
 {
     public partial class frmCompra : Form
     {
+        private static object objLock = new object();
         private PurchaseRepository repository = new PurchaseRepository();
         private readonly ProductDetails productDetails;
 
@@ -32,7 +33,13 @@ namespace WowGames
             txtProduto.Text = productDetails.Nome;
             txtOpcao.Text = productDetails.Descricao;
             txtDescricao.Text = productDetails.Description;
-            txtPreco.Text = productDetails.PrecoDisplay;
+            if (productDetails.Preco.HasValue)
+                txtPreco.Text = productDetails.PrecoDisplay;
+            else
+            {
+                txtPreco.Text = "";
+                txtPreco.ReadOnly = false;
+            }
             txtProvider.Text = productDetails.ProviderCode;
             txtCodProd.Text = productDetails.ProductCode;
             txtCodOpcao.Text = productDetails.ProductOptionCode;
@@ -101,8 +108,19 @@ namespace WowGames
                 var row = dtResult.NewRow();
                 try
                 {
+                    double preco = 0;
+                    if (productDetails.Preco.HasValue)
+                        preco = productDetails.Preco.Value;
+                    else if (double.TryParse(txtPreco.Text, out preco))
+                        preco = Convert.ToDouble(txtPreco.Text, new CultureInfo("pt-BR"));
+                    else
+                    {
+                        MessageBox.Show("Informe o preço do produto", "Atenção");
+                        return;
+                    }
                     var result = proxy.DoTransaction(productDetails.ProductTypeCode, productDetails.ProviderCode,
-                        productDetails.ProductCode, productDetails.ProductOptionCode, productDetails.Preco ?? 0);
+                        productDetails.ProductCode, productDetails.ProductOptionCode, preco);
+
                     row[0] = result.Date.ToString("dd/MM/yyyy hh:mm:ss");
                     row[1] = result.Amount.ToString("C");
                     row[2] = result.ProviderTransactionId.ToString();
@@ -119,7 +137,9 @@ namespace WowGames
                         Token = result.Reference,
                         Serial = result.SerialNumber,
                         PurchaseDate = DateTime.Now,
-                        Sku = productDetails.Descricao
+                        Sku = productDetails.Descricao,
+                        TransactionId = result.ProviderTransactionId.ToString(),
+                        Receipt = string.Join(Environment.NewLine, result.Receipt)
                     });
                 }
                 catch (Exception ex)
@@ -131,7 +151,8 @@ namespace WowGames
                     row[4] = string.Empty;
                     row[5] = "Error - " + ex.Message;
                 }
-                dtResult.Rows.Add(row);
+                lock (objLock)
+                    dtResult.Rows.Add(row);
             });
             dgResult.DataSource = dtResult;
             lblSucesso.Text = $"{totalSucesso}/{qtd}";

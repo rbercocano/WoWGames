@@ -17,7 +17,7 @@ namespace WowGames.Repositories
             using (var sqlCon = new SqlConnection(_connectionString))
             {
                 sqlCon.Open();
-                using (var cmd = new SqlCommand("INSERT INTO PURCHASE VALUES (@date,@serial,@token,@suggestedPrice,@paidPrice,@partnerId,@sku)", sqlCon))
+                using (var cmd = new SqlCommand("INSERT INTO PURCHASE VALUES (@date,@serial,@token,@suggestedPrice,@paidPrice,@partnerId,@sku,@transaction,@receipt)", sqlCon))
                 {
                     cmd.Parameters.Add(new SqlParameter("date", SqlDbType.DateTime) { Direction = ParameterDirection.Input, Value = purchase.PurchaseDate });
                     cmd.Parameters.Add(new SqlParameter("serial", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = purchase.Serial, Size = 50 });
@@ -26,6 +26,8 @@ namespace WowGames.Repositories
                     cmd.Parameters.Add(new SqlParameter("paidPrice", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = purchase.PaidPrice, Size = 50 });
                     cmd.Parameters.Add(new SqlParameter("partnerId", SqlDbType.Int) { Direction = ParameterDirection.Input, Value = purchase.PartnerId });
                     cmd.Parameters.Add(new SqlParameter("sku", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = purchase.Sku, Size = 50 });
+                    cmd.Parameters.Add(new SqlParameter("transaction", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = string.IsNullOrEmpty(purchase.TransactionId) ? DBNull.Value : (object)purchase.TransactionId, Size = 250 });
+                    cmd.Parameters.Add(new SqlParameter("receipt", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = string.IsNullOrEmpty(purchase.Receipt) ? DBNull.Value : (object)purchase.Receipt, Size = -1 });
                     cmd.ExecuteNonQuery();
                 }
                 sqlCon.Close();
@@ -62,6 +64,8 @@ namespace WowGames.Repositories
                             Sku = dr["Sku"].ToString(),
                             PurchaseDate = Convert.ToDateTime(dr["PurchaseDate"]),
                             Partner = dr["Partner"].ToString(),
+                            TransactionId = dr["TransactionId"].ToString(),
+                            Receipt = dr["Receipt"].ToString(),
                         });
                     }
                 }
