@@ -97,6 +97,7 @@
     <Compile Include="Models\AquiPaga\PaymentResultData.cs" />
     <Compile Include="Models\AquiPaga\Product.cs" />
     <Compile Include="Models\AquiPaga\ProductOptionsList.cs" />
+    <Compile Include="Models\AquiPaga\PurchaseDetails.cs" />
     <Compile Include="Models\AquiPaga\TransactionRequest.cs" />
     <Compile Include="Models\AquiPaga\ProductType.cs" />
     <Compile Include="Models\AquiPaga\ProductRequest.cs" />

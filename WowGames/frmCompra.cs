@@ -93,19 +93,13 @@ namespace WowGames
                 MessageBox.Show("A quantidade deve ser maior que ZERO", "Atenção");
                 return;
             }
-            var dtResult = new DataTable();
-            dtResult.Columns.Add("Date");
-            dtResult.Columns.Add("Amount");
-            dtResult.Columns.Add("ProviderTransactionId");
-            dtResult.Columns.Add("Reference");
-            dtResult.Columns.Add("SerialNumber");
-            dtResult.Columns.Add("Message");
+            var resultList = new List<PurchaseDetails>();
 
             var proxy = new AquiPagaProxy();
             var totalSucesso = 0;
             Parallel.For(0, qtd, (x) =>
             {
-                var row = dtResult.NewRow();
+                PurchaseDetails data;
                 try
                 {
                     double preco = 0;
@@ -120,13 +114,15 @@ namespace WowGames
                     }
                     var result = proxy.DoTransaction(productDetails.ProductTypeCode, productDetails.ProviderCode,
                         productDetails.ProductCode, productDetails.ProductOptionCode, preco);
-
-                    row[0] = result.Date.ToString("dd/MM/yyyy hh:mm:ss");
-                    row[1] = result.Amount.ToString("C");
-                    row[2] = result.ProviderTransactionId.ToString();
-                    row[3] = result.Reference.ToString();
-                    row[4] = result.SerialNumber.ToString();
-                    row[5] = string.Join(Environment.NewLine, result.Receipt);
+                    data = new PurchaseDetails
+                    {
+                        Date = result.Date.ToString("dd/MM/yyyy hh:mm:ss"),
+                        ProviderTransactionId = result.ProviderTransactionId.ToString(),
+                        Amount = result.Amount.ToString("C"),
+                        Reference = result.Reference.ToString(),
+                        SerialNumber = result.SerialNumber.ToString(),
+                        Message = string.Join(Environment.NewLine, result.Receipt)
+                    };
                     Interlocked.Increment(ref totalSucesso);
                     repository.Add(new Purchase
                     {
@@ -144,17 +140,15 @@ namespace WowGames
                 }
                 catch (Exception ex)
                 {
-                    row[0] = string.Empty;
-                    row[1] = string.Empty;
-                    row[2] = string.Empty;
-                    row[3] = string.Empty;
-                    row[4] = string.Empty;
-                    row[5] = "Error - " + ex.Message;
+                    data = new PurchaseDetails
+                    {
+                        Message = "Error - " + ex.Message
+                    };
                 }
                 lock (objLock)
-                    dtResult.Rows.Add(row);
+                    resultList.Add(data);
             });
-            dgResult.DataSource = dtResult;
+            dgResult.DataSource = resultList;
             lblSucesso.Text = $"{totalSucesso}/{qtd}";
             lblValor.Text = $"{totalSucesso * (productDetails.Preco ?? 0):C}";
         }
