@@ -16,7 +16,7 @@ using WowGames.Repositories;
 
 namespace WowGames
 {
-    public partial class frmCompra : Form
+    public partial class frmCompra : MaterialSkin.Controls.MaterialForm
     {
         private static object objLock = new object();
         private PurchaseRepository repository = new PurchaseRepository();

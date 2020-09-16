@@ -31,3 +31,5 @@ E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.c
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.frmAquiPaga.resources
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.frmCompra.resources
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csprojAssemblyReference.cache
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\MaterialSkin.dll
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmRixtyPinRecovery.resources

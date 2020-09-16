@@ -12,14 +12,15 @@ namespace WowGames
 
         private void MnRixty_Click(object sender, EventArgs e)
         {
-            var rixtyForm = new FrmRixty();
-            rixtyForm.ShowDialog();
         }
 
         private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new FrmRelCompras();
-            frm.ShowDialog();
+            var frm = new FrmRelCompras
+            {
+                MdiParent = this
+            };
+            frm.Show();
 
         }
 
@@ -35,15 +36,42 @@ namespace WowGames
 
         private void extratoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new FrmBalance();
-            frm.ShowDialog();
+            var frm = new FrmBalance
+            {
+                MdiParent = this
+            };
+            frm.Show();
 
         }
 
         private void aquiPagaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new frmAquiPaga();
-            frm.ShowDialog();
+            var frm = new frmAquiPaga
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
+        }
+
+
+        private void resgatarPINToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmRixtyPinRecovery
+            {
+                MdiParent = this
+            };
+            frm.Show();
+        }
+
+        private void compraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var rixtyForm = new FrmRixty
+            {
+                MdiParent = this
+            };
+            rixtyForm.Show();
 
         }
     }

@@ -6,7 +6,7 @@ using WowGames.Repositories;
 
 namespace WowGames
 {
-    public partial class FrmBalance : Form
+    public partial class FrmBalance : MaterialSkin.Controls.MaterialForm
     {
         private BalanceRepository repository = new BalanceRepository();
         public FrmBalance()

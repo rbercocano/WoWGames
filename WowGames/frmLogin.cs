@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace WowGames
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : MaterialSkin.Controls.MaterialForm
     {
         public FrmLogin()
         {

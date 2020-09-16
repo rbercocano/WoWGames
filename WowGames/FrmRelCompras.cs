@@ -5,7 +5,7 @@ using WowGames.Repositories;
 
 namespace WowGames
 {
-    public partial class FrmRelCompras : Form
+    public partial class FrmRelCompras : MaterialSkin.Controls.MaterialForm
     {
         private readonly PurchaseRepository repository = new PurchaseRepository();
         public FrmRelCompras()

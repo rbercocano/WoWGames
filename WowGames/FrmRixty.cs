@@ -10,12 +10,19 @@ using WowGames.Repositories;
 
 namespace WowGames
 {
-    public partial class FrmRixty : Form
+    public partial class FrmRixty : MaterialSkin.Controls.MaterialForm
     {
         private PurchaseRepository repository = new PurchaseRepository();
         public FrmRixty()
         {
             InitializeComponent();
+            //lvCompras.Columns.Add("Data Compra", 180, HorizontalAlignment.Left);
+            //lvCompras.Columns.Add("SKU", 180, HorizontalAlignment.Left);
+            //lvCompras.Columns.Add("Serial", 180, HorizontalAlignment.Left);
+            //lvCompras.Columns.Add("Token", 180, HorizontalAlignment.Left);
+            //lvCompras.Columns.Add("PaidPrice", 180, HorizontalAlignment.Left);
+            //lvCompras.Columns.Add("SuggestedPrice", 180, HorizontalAlignment.Left);
+
             dgvCompras.AutoGenerateColumns = false;
             dgvCompras.AllowUserToAddRows = false;
             dgvCompras.ReadOnly = true;
@@ -223,8 +230,28 @@ namespace WowGames
             var sucess = data.Where(d => d.Serial != "ERRO");
             lblValor.Text = $"{sucess.Sum(d => Convert.ToDecimal(d.PaidPrice, CultureInfo.InvariantCulture)):C}";
             lblSucesso.Text = $"{sucess.Count()}/{qtd}";
+            //BindListItem(data);
             dgvCompras.DataSource = data;
         }
+        private void BindListItem(List<Purchase> data)
+        {
+            foreach (var item in data)
+            {
+                var cols = new[] {
+                    item.PurchaseDate.ToString("dd/MM/yyyy hh:mm:ss"),
+                    item.Sku,
+                    item.Serial,
+                    item.Token,
+                    item.PaidPrice,
+                    item.SuggestedPrice
+                };
+                var itm = new ListViewItem(cols);
+                //materialListView1.Items.Add(itm);
+            }
+        }
+        private void FrmRixty_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

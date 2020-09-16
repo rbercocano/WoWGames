@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WowGames.Models;
 using WowGames.Proxy;
 
 namespace WowGames
 {
-    public partial class frmAquiPaga : Form
+    public partial class frmAquiPaga : MaterialSkin.Controls.MaterialForm
     {
         public frmAquiPaga()
         {
