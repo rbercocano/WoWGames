@@ -6,13 +6,17 @@ namespace WowGames.Security
 {
     public class RixtySignature
     {
-        public static string GenerateSignature(string applicationCode, string productCode, string quantity, string referenceId)
+        public static string GeneratePurchaseConfirmationSignature(string validatedToken, string referenceId)
         {
             var secret = ConfigurationManager.AppSettings["RixtySecret"];
             var version = ConfigurationManager.AppSettings["RixtyGoldApiVersion"];
+            var applicationCode = ConfigurationManager.AppSettings["RixtyAppCode"];
+            var input = $"{applicationCode}{referenceId}{version}{validatedToken}{secret}";
+            return Hash(input);
+        }
 
-            
-            var input = $"{applicationCode}{productCode}{quantity}{referenceId}{version}{secret}";
+        private static string Hash(string input)
+        {
             using (MD5 md5 = MD5.Create())
             {
                 byte[] inputBytes = Encoding.ASCII.GetBytes(input);

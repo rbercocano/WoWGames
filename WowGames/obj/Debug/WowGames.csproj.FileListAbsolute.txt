@@ -30,3 +30,4 @@ E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\Newtonsoft
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csproj.CopyComplete
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.frmAquiPaga.resources
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.frmCompra.resources
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csprojAssemblyReference.cache

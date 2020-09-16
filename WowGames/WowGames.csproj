@@ -109,9 +109,12 @@
     <Compile Include="Models\BalanceDetail.cs" />
     <Compile Include="Models\ProductDetails.cs" />
     <Compile Include="Models\Purchase.cs" />
+    <Compile Include="Models\Rixty\Coupon.cs" />
+    <Compile Include="Models\Rixty\PurchaseConfirmation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy\AquiPagaProxy.cs" />
+    <Compile Include="Proxy\RixtyProxy.cs" />
     <Compile Include="Repositories\BalanceRepository.cs" />
     <Compile Include="Repositories\PurchaseRepository.cs" />
     <Compile Include="Security\RixtySignature.cs" />
