@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1500, 700);
+            this.ClientSize = new System.Drawing.Size(1600, 700);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
@@ -146,8 +146,8 @@
             this.Controls.Add(this.txtFim);
             this.Controls.Add(this.txtIni);
             this.Controls.Add(this.txtSku);
-            this.MaximumSize = new System.Drawing.Size(1500, 700);
-            this.MinimumSize = new System.Drawing.Size(1500, 700);
+            this.MaximumSize = new System.Drawing.Size(1600, 700);
+            this.MinimumSize = new System.Drawing.Size(1600, 700);
             this.Name = "FrmRelCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras";
