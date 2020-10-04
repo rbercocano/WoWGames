@@ -1,6 +1,6 @@
 ﻿namespace WowGames
 {
-    partial class FrmRixty
+    partial class FrmEPay
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.txtSku = new System.Windows.Forms.TextBox();
-            this.txtQtd = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblSucesso = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.btnSkuSearch = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtQtd = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,17 +51,17 @@
             this.txtSku.MaxLength = 35;
             this.txtSku.Name = "txtSku";
             this.txtSku.Size = new System.Drawing.Size(234, 28);
-            this.txtSku.TabIndex = 3;
+            this.txtSku.TabIndex = 1;
             // 
-            // txtQtd
+            // txtValor
             // 
-            this.txtQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtQtd.Location = new System.Drawing.Point(528, 90);
-            this.txtQtd.MaxLength = 3;
-            this.txtQtd.Name = "txtQtd";
-            this.txtQtd.Size = new System.Drawing.Size(89, 28);
-            this.txtQtd.TabIndex = 5;
-            this.txtQtd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtValor.Location = new System.Drawing.Point(475, 92);
+            this.txtValor.MaxLength = 6;
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(145, 28);
+            this.txtValor.TabIndex = 2;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // lblValor
             // 
@@ -75,7 +76,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(251, 653);
+            this.label9.Location = new System.Drawing.Point(246, 653);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(113, 25);
             this.label9.TabIndex = 30;
@@ -94,7 +95,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(930, 653);
+            this.label8.Location = new System.Drawing.Point(915, 653);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(230, 25);
             this.label8.TabIndex = 28;
@@ -122,25 +123,9 @@
             this.materialLabel2.Location = new System.Drawing.Point(406, 95);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(106, 24);
+            this.materialLabel2.Size = new System.Drawing.Size(54, 24);
             this.materialLabel2.TabIndex = 33;
-            this.materialLabel2.Text = "Quantidade";
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(1249, 88);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(92, 36);
-            this.materialRaisedButton1.TabIndex = 34;
-            this.materialRaisedButton1.Text = "Validar";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.btnValidar_Click);
+            this.materialLabel2.Text = "Valor";
             // 
             // materialRaisedButton2
             // 
@@ -174,7 +159,7 @@
             this.btnSkuSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSkuSearch.Depth = 0;
             this.btnSkuSearch.Icon = null;
-            this.btnSkuSearch.Location = new System.Drawing.Point(1086, 88);
+            this.btnSkuSearch.Location = new System.Drawing.Point(1221, 88);
             this.btnSkuSearch.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSkuSearch.Name = "btnSkuSearch";
             this.btnSkuSearch.Primary = true;
@@ -184,14 +169,37 @@
             this.btnSkuSearch.UseVisualStyleBackColor = true;
             this.btnSkuSearch.Click += new System.EventHandler(this.btnSkuSearch_Click);
             // 
-            // FrmRixty
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(677, 94);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(106, 24);
+            this.materialLabel3.TabIndex = 37;
+            this.materialLabel3.Text = "Quantidade";
+            // 
+            // txtQtd
+            // 
+            this.txtQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtQtd.Location = new System.Drawing.Point(800, 92);
+            this.txtQtd.MaxLength = 3;
+            this.txtQtd.Name = "txtQtd";
+            this.txtQtd.Size = new System.Drawing.Size(145, 28);
+            this.txtQtd.TabIndex = 3;
+            // 
+            // FrmEPay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 700);
+            this.Controls.Add(this.txtQtd);
+            this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.btnSkuSearch);
             this.Controls.Add(this.materialRaisedButton2);
-            this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lblValor);
@@ -199,14 +207,13 @@
             this.Controls.Add(this.lblSucesso);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvCompras);
-            this.Controls.Add(this.txtQtd);
+            this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtSku);
             this.MaximumSize = new System.Drawing.Size(1600, 700);
             this.MinimumSize = new System.Drawing.Size(1600, 700);
-            this.Name = "FrmRixty";
+            this.Name = "FrmEPay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Rixty";
-            this.Load += new System.EventHandler(this.FrmRixty_Load);
+            this.Text = "EPay";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,16 +222,17 @@
 
         #endregion
         private System.Windows.Forms.TextBox txtSku;
-        private System.Windows.Forms.TextBox txtQtd;
+        private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblSucesso;
         private System.Windows.Forms.Label label8;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private System.Windows.Forms.DataGridView dgvCompras;
         private MaterialSkin.Controls.MaterialRaisedButton btnSkuSearch;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private System.Windows.Forms.TextBox txtQtd;
     }
 }

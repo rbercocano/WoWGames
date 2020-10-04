@@ -66,13 +66,32 @@ namespace WowGames.Repositories
                             Partner = dr["Partner"].ToString(),
                             TransactionId = dr["TransactionId"].ToString(),
                             Receipt = dr["Receipt"].ToString(),
-                        });
+                            PurchaseId = Convert.ToInt32(dr["PurchaseId"].ToString()),
+                            Cancelled = Convert.ToBoolean(dr["Cancelled"].ToString()),
+                            CancelDate = dr["CancelDate"] != DBNull.Value ? new DateTime?(Convert.ToDateTime(dr["CancelDate"])) : new DateTime?(),
+
+                        }); ;
                     }
                 }
                 sqlCon.Close();
             }
 
             return retorno;
+        }
+
+        public bool CancelPurchase(int purchaseId)
+        {
+            using (var sqlCon = new SqlConnection(_connectionString))
+            {
+                sqlCon.Open();
+                using (var cmd = new SqlCommand("UPDATE PURCHASE SET CANCELLED = 1, CANCELDATE = GETDATE() WHERE PurchaseID = @ID", sqlCon))
+                {
+                    cmd.Parameters.Add(new SqlParameter("ID", SqlDbType.Int) { Direction = ParameterDirection.Input, Value = purchaseId });
+                    var rows = cmd.ExecuteNonQuery();
+                    return rows > 0;
+                }
+            }
+
         }
     }
 }

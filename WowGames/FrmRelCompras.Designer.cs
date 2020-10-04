@@ -73,10 +73,14 @@
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompras.Location = new System.Drawing.Point(12, 147);
             this.dgvCompras.Name = "dgvCompras";
+            this.dgvCompras.ReadOnly = true;
+            this.dgvCompras.RowHeadersVisible = false;
             this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.RowTemplate.Height = 24;
             this.dgvCompras.Size = new System.Drawing.Size(1476, 541);
             this.dgvCompras.TabIndex = 11;
+            this.dgvCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompras_CellContentClick);
+            this.dgvCompras.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCompras_CellFormatting);
             // 
             // materialRaisedButton1
             // 

@@ -135,7 +135,8 @@ namespace WowGames
                         PurchaseDate = DateTime.Now,
                         Sku = productDetails.Descricao,
                         TransactionId = result.ProviderTransactionId.ToString(),
-                        Receipt = string.Join(Environment.NewLine, result.Receipt)
+                        Receipt = string.Join(Environment.NewLine, result.Receipt),
+                        Cancelled = false
                     });
                 }
                 catch (Exception ex)

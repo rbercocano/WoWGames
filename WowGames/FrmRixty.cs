@@ -13,15 +13,10 @@ namespace WowGames
     public partial class FrmRixty : MaterialSkin.Controls.MaterialForm
     {
         private PurchaseRepository repository = new PurchaseRepository();
+        private readonly FrmSkuSearch frmSkuSearch = new FrmSkuSearch(1);
         public FrmRixty()
         {
             InitializeComponent();
-            //lvCompras.Columns.Add("Data Compra", 180, HorizontalAlignment.Left);
-            //lvCompras.Columns.Add("SKU", 180, HorizontalAlignment.Left);
-            //lvCompras.Columns.Add("Serial", 180, HorizontalAlignment.Left);
-            //lvCompras.Columns.Add("Token", 180, HorizontalAlignment.Left);
-            //lvCompras.Columns.Add("PaidPrice", 180, HorizontalAlignment.Left);
-            //lvCompras.Columns.Add("SuggestedPrice", 180, HorizontalAlignment.Left);
 
             dgvCompras.AutoGenerateColumns = false;
             dgvCompras.AllowUserToAddRows = false;
@@ -32,7 +27,12 @@ namespace WowGames
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Token", Name = "Token", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PaidPrice", Name = "Seu Preço", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SuggestedPrice", Name = "Preço Sugerido", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
+            frmSkuSearch.OnSelectSku += FrmSkuSearch_OnSelectSku;
+        }
 
+        private void FrmSkuSearch_OnSelectSku(object sender, string sku)
+        {
+            txtSku.Text = sku;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -193,7 +193,8 @@ namespace WowGames
                                 Token = token,
                                 Serial = serial,
                                 PurchaseDate = DateTime.Now,
-                                Sku = sku
+                                Sku = sku,
+                                Cancelled = false
                             };
                             data.Add(p);
                             repository.Add(p);
@@ -252,6 +253,12 @@ namespace WowGames
         private void FrmRixty_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSkuSearch_Click(object sender, EventArgs e)
+        {
+            frmSkuSearch.ShowDialog();
+            frmSkuSearch.Close();
         }
     }
 }

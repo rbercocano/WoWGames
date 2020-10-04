@@ -74,5 +74,27 @@ namespace WowGames
             rixtyForm.Show();
 
         }
+
+        private void sKUToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var frm = new FrmSku    
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
+        }
+
+        private void ePayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var frm = new FrmEPay
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
+        }
     }
 }
