@@ -13,8 +13,7 @@ namespace WowGames
     public partial class FrmRixty : MaterialSkin.Controls.MaterialForm
     {
         private PurchaseRepository repository = new PurchaseRepository();
-        private readonly FrmSkuSearch frmSkuSearch = new FrmSkuSearch(1);
-        public FrmRixty()
+        public FrmRixty(string sku)
         {
             InitializeComponent();
 
@@ -27,11 +26,6 @@ namespace WowGames
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Token", Name = "Token", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PaidPrice", Name = "Seu Preço", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
             dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SuggestedPrice", Name = "Preço Sugerido", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
-            frmSkuSearch.OnSelectSku += FrmSkuSearch_OnSelectSku;
-        }
-
-        private void FrmSkuSearch_OnSelectSku(object sender, string sku)
-        {
             txtSku.Text = sku;
         }
 
@@ -255,10 +249,5 @@ namespace WowGames
 
         }
 
-        private void btnSkuSearch_Click(object sender, EventArgs e)
-        {
-            frmSkuSearch.ShowDialog();
-            frmSkuSearch.Close();
-        }
     }
 }

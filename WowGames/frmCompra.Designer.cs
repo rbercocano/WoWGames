@@ -59,7 +59,7 @@
             this.txtProduto.Location = new System.Drawing.Point(145, 89);
             this.txtProduto.Name = "txtProduto";
             this.txtProduto.ReadOnly = true;
-            this.txtProduto.Size = new System.Drawing.Size(513, 28);
+            this.txtProduto.Size = new System.Drawing.Size(438, 28);
             this.txtProduto.TabIndex = 8;
             // 
             // txtOpcao
@@ -68,17 +68,17 @@
             this.txtOpcao.Location = new System.Drawing.Point(145, 133);
             this.txtOpcao.Name = "txtOpcao";
             this.txtOpcao.ReadOnly = true;
-            this.txtOpcao.Size = new System.Drawing.Size(513, 28);
+            this.txtOpcao.Size = new System.Drawing.Size(438, 28);
             this.txtOpcao.TabIndex = 9;
             // 
             // txtDescricao
             // 
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtDescricao.Location = new System.Drawing.Point(804, 82);
+            this.txtDescricao.Location = new System.Drawing.Point(702, 86);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.ReadOnly = true;
-            this.txtDescricao.Size = new System.Drawing.Size(643, 103);
+            this.txtDescricao.Size = new System.Drawing.Size(609, 103);
             this.txtDescricao.TabIndex = 11;
             // 
             // txtPreco
@@ -93,7 +93,7 @@
             // txtProvider
             // 
             this.txtProvider.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtProvider.Location = new System.Drawing.Point(628, 203);
+            this.txtProvider.Location = new System.Drawing.Point(547, 202);
             this.txtProvider.Name = "txtProvider";
             this.txtProvider.ReadOnly = true;
             this.txtProvider.Size = new System.Drawing.Size(230, 28);
@@ -102,7 +102,7 @@
             // txtCodOpcao
             // 
             this.txtCodOpcao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtCodOpcao.Location = new System.Drawing.Point(628, 242);
+            this.txtCodOpcao.Location = new System.Drawing.Point(547, 241);
             this.txtCodOpcao.Name = "txtCodOpcao";
             this.txtCodOpcao.ReadOnly = true;
             this.txtCodOpcao.Size = new System.Drawing.Size(230, 28);
@@ -120,7 +120,7 @@
             // txtQtd
             // 
             this.txtQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtQtd.Location = new System.Drawing.Point(1071, 241);
+            this.txtQtd.Location = new System.Drawing.Point(929, 240);
             this.txtQtd.MaxLength = 2;
             this.txtQtd.Name = "txtQtd";
             this.txtQtd.Size = new System.Drawing.Size(230, 28);
@@ -134,14 +134,14 @@
             this.dgResult.Name = "dgResult";
             this.dgResult.RowHeadersWidth = 51;
             this.dgResult.RowTemplate.Height = 24;
-            this.dgResult.Size = new System.Drawing.Size(1456, 365);
+            this.dgResult.Size = new System.Drawing.Size(1317, 365);
             this.dgResult.TabIndex = 23;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(984, 666);
+            this.label8.Location = new System.Drawing.Point(950, 666);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(230, 25);
             this.label8.TabIndex = 24;
@@ -207,7 +207,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(701, 92);
+            this.materialLabel3.Location = new System.Drawing.Point(602, 89);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(94, 24);
@@ -246,7 +246,7 @@
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel6.Location = new System.Drawing.Point(523, 203);
+            this.materialLabel6.Location = new System.Drawing.Point(442, 202);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(80, 24);
@@ -259,7 +259,7 @@
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel7.Location = new System.Drawing.Point(494, 245);
+            this.materialLabel7.Location = new System.Drawing.Point(413, 244);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
             this.materialLabel7.Size = new System.Drawing.Size(109, 24);
@@ -272,7 +272,7 @@
             this.materialLabel8.Depth = 0;
             this.materialLabel8.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel8.Location = new System.Drawing.Point(948, 244);
+            this.materialLabel8.Location = new System.Drawing.Point(806, 243);
             this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel8.Name = "materialLabel8";
             this.materialLabel8.Size = new System.Drawing.Size(106, 24);
@@ -285,7 +285,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(1338, 234);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(1196, 233);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -322,8 +322,6 @@
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtOpcao);
             this.Controls.Add(this.txtProduto);
-            this.MaximumSize = new System.Drawing.Size(1482, 700);
-            this.MinimumSize = new System.Drawing.Size(1482, 700);
             this.Name = "frmCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalhes do Produto";

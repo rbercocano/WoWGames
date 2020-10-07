@@ -57,13 +57,13 @@
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.RowTemplate.Height = 24;
-            this.dgvCompras.Size = new System.Drawing.Size(1476, 529);
+            this.dgvCompras.Size = new System.Drawing.Size(1380, 529);
             this.dgvCompras.TabIndex = 11;
             // 
             // txtLancamento
             // 
             this.txtLancamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtLancamento.Location = new System.Drawing.Point(1173, 88);
+            this.txtLancamento.Location = new System.Drawing.Point(1090, 90);
             this.txtLancamento.MaxLength = 10;
             this.txtLancamento.Name = "txtLancamento";
             this.txtLancamento.Size = new System.Drawing.Size(197, 28);
@@ -118,7 +118,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(951, 92);
+            this.materialLabel3.Location = new System.Drawing.Point(868, 94);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(191, 24);
@@ -131,7 +131,7 @@
             this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton2.Depth = 0;
             this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(1389, 83);
+            this.materialRaisedButton2.Location = new System.Drawing.Point(1306, 85);
             this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton2.Name = "materialRaisedButton2";
             this.materialRaisedButton2.Primary = true;
@@ -154,8 +154,6 @@
             this.Controls.Add(this.txtLancamento);
             this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.txtDias);
-            this.MaximumSize = new System.Drawing.Size(1600, 700);
-            this.MinimumSize = new System.Drawing.Size(1600, 700);
             this.Name = "FrmBalance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Saldo";

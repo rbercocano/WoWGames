@@ -17,7 +17,7 @@ namespace WowGames.Repositories
             using (var sqlCon = new SqlConnection(_connectionString))
             {
                 sqlCon.Open();
-                using (var cmd = new SqlCommand("INSERT INTO PURCHASE VALUES (@date,@serial,@token,@suggestedPrice,@paidPrice,@partnerId,@sku,@transaction,@receipt)", sqlCon))
+                using (var cmd = new SqlCommand("INSERT INTO PURCHASE VALUES (@date,@serial,@token,@suggestedPrice,@paidPrice,@partnerId,@sku,@transaction,@receipt,@cancelled,@cancelDate)", sqlCon))
                 {
                     cmd.Parameters.Add(new SqlParameter("date", SqlDbType.DateTime) { Direction = ParameterDirection.Input, Value = purchase.PurchaseDate });
                     cmd.Parameters.Add(new SqlParameter("serial", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = purchase.Serial, Size = 50 });
@@ -28,6 +28,8 @@ namespace WowGames.Repositories
                     cmd.Parameters.Add(new SqlParameter("sku", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = purchase.Sku, Size = 50 });
                     cmd.Parameters.Add(new SqlParameter("transaction", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = string.IsNullOrEmpty(purchase.TransactionId) ? DBNull.Value : (object)purchase.TransactionId, Size = 250 });
                     cmd.Parameters.Add(new SqlParameter("receipt", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = string.IsNullOrEmpty(purchase.Receipt) ? DBNull.Value : (object)purchase.Receipt, Size = -1 });
+                    cmd.Parameters.Add(new SqlParameter("cancelled", SqlDbType.Bit) { Direction = ParameterDirection.Input, Value = purchase.Cancelled });
+                    cmd.Parameters.Add(new SqlParameter("cancelDate", SqlDbType.DateTime) { Direction = ParameterDirection.Input, Value = !purchase.Cancelled ? DBNull.Value : (object)DateTime.Now });
                     cmd.ExecuteNonQuery();
                 }
                 sqlCon.Close();

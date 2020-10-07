@@ -13,5 +13,6 @@ namespace WowGames.Models
         public string Description { get; set; }
         public int PartnerId { get; set; }
         public string Partner { get; set; }
+        public string Valor { get; set; }
     }
 }

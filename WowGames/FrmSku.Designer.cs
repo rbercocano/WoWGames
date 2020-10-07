@@ -37,13 +37,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.cbPartnerCad = new System.Windows.Forms.ComboBox();
-            this.bdnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtSkuCad = new System.Windows.Forms.TextBox();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
+            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtSkuCad = new System.Windows.Forms.TextBox();
+            this.cbPartnerCad = new System.Windows.Forms.ComboBox();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.bdnAdd = new MaterialSkin.Controls.MaterialRaisedButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,7 +60,7 @@
             this.dgProdutos.RowHeadersVisible = false;
             this.dgProdutos.RowHeadersWidth = 51;
             this.dgProdutos.RowTemplate.Height = 24;
-            this.dgProdutos.Size = new System.Drawing.Size(773, 537);
+            this.dgProdutos.Size = new System.Drawing.Size(748, 537);
             this.dgProdutos.TabIndex = 9;
             this.dgProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdutos_CellContentClick);
             // 
@@ -145,7 +147,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox2.Location = new System.Drawing.Point(663, 92);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(804, 583);
+            this.groupBox2.Size = new System.Drawing.Size(786, 583);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "SKUs";
@@ -153,6 +155,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox3.Controls.Add(this.materialLabel6);
+            this.groupBox3.Controls.Add(this.txtValor);
             this.groupBox3.Controls.Add(this.txtDesc);
             this.groupBox3.Controls.Add(this.materialLabel5);
             this.groupBox3.Controls.Add(this.materialLabel3);
@@ -168,6 +172,49 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cadastro";
             // 
+            // materialLabel6
+            // 
+            this.materialLabel6.AutoSize = true;
+            this.materialLabel6.Depth = 0;
+            this.materialLabel6.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel6.Location = new System.Drawing.Point(65, 132);
+            this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel6.Name = "materialLabel6";
+            this.materialLabel6.Size = new System.Drawing.Size(54, 24);
+            this.materialLabel6.TabIndex = 22;
+            this.materialLabel6.Text = "Valor";
+            // 
+            // txtValor
+            // 
+            this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtValor.Location = new System.Drawing.Point(139, 128);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(292, 28);
+            this.txtValor.TabIndex = 23;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.Location = new System.Drawing.Point(139, 188);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(471, 217);
+            this.txtDesc.TabIndex = 21;
+            // 
+            // materialLabel5
+            // 
+            this.materialLabel5.AutoSize = true;
+            this.materialLabel5.Depth = 0;
+            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel5.Location = new System.Drawing.Point(16, 188);
+            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel5.Name = "materialLabel5";
+            this.materialLabel5.Size = new System.Drawing.Size(94, 24);
+            this.materialLabel5.TabIndex = 20;
+            this.materialLabel5.Text = "Descrição";
+            // 
             // materialLabel3
             // 
             this.materialLabel3.AutoSize = true;
@@ -181,6 +228,14 @@
             this.materialLabel3.TabIndex = 16;
             this.materialLabel3.Text = "SKU";
             // 
+            // txtSkuCad
+            // 
+            this.txtSkuCad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtSkuCad.Location = new System.Drawing.Point(139, 31);
+            this.txtSkuCad.Name = "txtSkuCad";
+            this.txtSkuCad.Size = new System.Drawing.Size(292, 28);
+            this.txtSkuCad.TabIndex = 18;
+            // 
             // cbPartnerCad
             // 
             this.cbPartnerCad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
@@ -189,6 +244,19 @@
             this.cbPartnerCad.Name = "cbPartnerCad";
             this.cbPartnerCad.Size = new System.Drawing.Size(292, 30);
             this.cbPartnerCad.TabIndex = 19;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(30, 83);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(80, 24);
+            this.materialLabel4.TabIndex = 17;
+            this.materialLabel4.Text = "Parceiro";
             // 
             // bdnAdd
             // 
@@ -206,48 +274,6 @@
             this.bdnAdd.UseVisualStyleBackColor = true;
             this.bdnAdd.Click += new System.EventHandler(this.bdnAdd_Click);
             // 
-            // txtSkuCad
-            // 
-            this.txtSkuCad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtSkuCad.Location = new System.Drawing.Point(139, 31);
-            this.txtSkuCad.Name = "txtSkuCad";
-            this.txtSkuCad.Size = new System.Drawing.Size(292, 28);
-            this.txtSkuCad.TabIndex = 18;
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel4.Location = new System.Drawing.Point(30, 83);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(80, 24);
-            this.materialLabel4.TabIndex = 17;
-            this.materialLabel4.Text = "Parceiro";
-            // 
-            // materialLabel5
-            // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel5.Location = new System.Drawing.Point(16, 131);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(94, 24);
-            this.materialLabel5.TabIndex = 20;
-            this.materialLabel5.Text = "Descrição";
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.Location = new System.Drawing.Point(139, 128);
-            this.txtDesc.Multiline = true;
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(471, 277);
-            this.txtDesc.TabIndex = 21;
-            // 
             // FrmSku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -256,8 +282,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.MaximumSize = new System.Drawing.Size(1600, 700);
-            this.MinimumSize = new System.Drawing.Size(1600, 700);
             this.Name = "FrmSku";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SKUs";
@@ -289,5 +313,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton bdnAdd;
         private System.Windows.Forms.TextBox txtDesc;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
+        private MaterialSkin.Controls.MaterialLabel materialLabel6;
+        private System.Windows.Forms.TextBox txtValor;
     }
 }

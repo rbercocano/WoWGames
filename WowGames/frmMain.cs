@@ -67,11 +67,11 @@ namespace WowGames
         private void compraToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            var rixtyForm = new FrmRixty
+            var frm = new FrmSkuSearch(1)
             {
                 MdiParent = this
             };
-            rixtyForm.Show();
+            frm.Show();
 
         }
 
@@ -89,7 +89,7 @@ namespace WowGames
         private void ePayToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            var frm = new FrmEPay
+            var frm = new FrmSkuSearch(3)
             {
                 MdiParent = this
             };

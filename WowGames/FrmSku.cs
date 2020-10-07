@@ -39,7 +39,7 @@ namespace WowGames
             dgProdutos.ReadOnly = true;
             dgProdutos.AllowUserToAddRows = false;
 
-            dgProdutos.ColumnCount = 5;
+            dgProdutos.ColumnCount = 6;
             dgProdutos.Columns[0].Visible = false;
             dgProdutos.Columns[0].HeaderText = "Id";
             dgProdutos.Columns[0].DataPropertyName = "Id";
@@ -52,20 +52,26 @@ namespace WowGames
             dgProdutos.Columns[1].Width = 200;
 
             dgProdutos.Columns[2].Visible = true;
-            dgProdutos.Columns[2].HeaderText = "Descrição";
-            dgProdutos.Columns[2].DataPropertyName = "Description";
+            dgProdutos.Columns[2].HeaderText = "Valor";
+            dgProdutos.Columns[2].DataPropertyName = "Valor";
             dgProdutos.Columns[2].HeaderCell.Style.Font = font;
-            dgProdutos.Columns[2].Width = 243;
+            dgProdutos.Columns[2].Width = 100;
 
-            dgProdutos.Columns[3].Visible = false;
-            dgProdutos.Columns[3].DataPropertyName = "PartnerId";
+            dgProdutos.Columns[3].Visible = true;
+            dgProdutos.Columns[3].HeaderText = "Descrição";
+            dgProdutos.Columns[3].DataPropertyName = "Description";
             dgProdutos.Columns[3].HeaderCell.Style.Font = font;
+            dgProdutos.Columns[3].Width = 195;
 
-            dgProdutos.Columns[4].Visible = true;
-            dgProdutos.Columns[4].HeaderText = "Parceiro";
-            dgProdutos.Columns[4].DataPropertyName = "Partner";
+            dgProdutos.Columns[4].Visible = false;
+            dgProdutos.Columns[4].DataPropertyName = "PartnerId";
             dgProdutos.Columns[4].HeaderCell.Style.Font = font;
-            dgProdutos.Columns[4].Width = 100;
+
+            dgProdutos.Columns[5].Visible = true;
+            dgProdutos.Columns[5].HeaderText = "Parceiro";
+            dgProdutos.Columns[5].DataPropertyName = "Partner";
+            dgProdutos.Columns[5].HeaderCell.Style.Font = font;
+            dgProdutos.Columns[5].Width = 100;
 
 
             dgProdutos.DefaultCellStyle.Font = font;
@@ -119,6 +125,7 @@ namespace WowGames
             var sku = txtSkuCad.Text.Trim();
             var partner = (Partner)cbPartnerCad.SelectedItem;
             var desc = txtDesc.Text;
+            var valor = txtValor.Text;
 
             var exists = repository.Get(partner.Id, sku);
             if (exists != null)
@@ -133,10 +140,20 @@ namespace WowGames
                 Description = desc,
                 Id = 0,
                 PartnerId = partner.Id,
-                SKU = sku
+                SKU = sku,
+                Valor = valor
             });
             btnValidar_Click(null, null);
 
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

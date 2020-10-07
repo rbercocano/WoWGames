@@ -87,7 +87,7 @@
             this.txtToken.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtToken.Location = new System.Drawing.Point(804, 95);
             this.txtToken.Name = "txtToken";
-            this.txtToken.Size = new System.Drawing.Size(412, 28);
+            this.txtToken.Size = new System.Drawing.Size(371, 28);
             this.txtToken.TabIndex = 3;
             // 
             // btnRecovery
@@ -96,7 +96,7 @@
             this.btnRecovery.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRecovery.Depth = 0;
             this.btnRecovery.Icon = null;
-            this.btnRecovery.Location = new System.Drawing.Point(1275, 90);
+            this.btnRecovery.Location = new System.Drawing.Point(1217, 93);
             this.btnRecovery.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRecovery.Name = "btnRecovery";
             this.btnRecovery.Primary = true;
@@ -113,7 +113,7 @@
             this.materialDivider1.Location = new System.Drawing.Point(1, 140);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(1498, 10);
+            this.materialDivider1.Size = new System.Drawing.Size(1416, 10);
             this.materialDivider1.TabIndex = 5;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -136,7 +136,7 @@
             this.txtCodProd.Location = new System.Drawing.Point(235, 257);
             this.txtCodProd.Name = "txtCodProd";
             this.txtCodProd.ReadOnly = true;
-            this.txtCodProd.Size = new System.Drawing.Size(634, 28);
+            this.txtCodProd.Size = new System.Drawing.Size(573, 28);
             this.txtCodProd.TabIndex = 7;
             // 
             // materialLabel4
@@ -158,7 +158,7 @@
             this.txtPID.Location = new System.Drawing.Point(235, 206);
             this.txtPID.Name = "txtPID";
             this.txtPID.ReadOnly = true;
-            this.txtPID.Size = new System.Drawing.Size(634, 28);
+            this.txtPID.Size = new System.Drawing.Size(573, 28);
             this.txtPID.TabIndex = 9;
             // 
             // txtQtd
@@ -190,7 +190,7 @@
             this.txtPrice.Location = new System.Drawing.Point(235, 405);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
-            this.txtPrice.Size = new System.Drawing.Size(634, 28);
+            this.txtPrice.Size = new System.Drawing.Size(573, 28);
             this.txtPrice.TabIndex = 13;
             this.txtPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -210,7 +210,7 @@
             // dgvResultado
             // 
             this.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultado.Location = new System.Drawing.Point(921, 206);
+            this.dgvResultado.Location = new System.Drawing.Point(847, 206);
             this.dgvResultado.Name = "dgvResultado";
             this.dgvResultado.RowHeadersWidth = 51;
             this.dgvResultado.RowTemplate.Height = 24;
@@ -223,7 +223,7 @@
             this.txtProd.Location = new System.Drawing.Point(235, 303);
             this.txtProd.Name = "txtProd";
             this.txtProd.ReadOnly = true;
-            this.txtProd.Size = new System.Drawing.Size(634, 28);
+            this.txtProd.Size = new System.Drawing.Size(573, 28);
             this.txtProd.TabIndex = 16;
             // 
             // materialLabel7
@@ -261,8 +261,6 @@
             this.Controls.Add(this.txtRefID);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.MaximumSize = new System.Drawing.Size(1600, 700);
-            this.MinimumSize = new System.Drawing.Size(1600, 700);
             this.Name = "FrmRixtyPinRecovery";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RIXTY - Resgatar PIN";

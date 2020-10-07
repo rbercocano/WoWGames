@@ -38,7 +38,6 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvCompras = new System.Windows.Forms.DataGridView();
-            this.btnSkuSearch = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.txtQtd = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
@@ -133,7 +132,7 @@
             this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton2.Depth = 0;
             this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(1373, 88);
+            this.materialRaisedButton2.Location = new System.Drawing.Point(1319, 88);
             this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton2.Name = "materialRaisedButton2";
             this.materialRaisedButton2.Primary = true;
@@ -150,24 +149,8 @@
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.RowTemplate.Height = 24;
-            this.dgvCompras.Size = new System.Drawing.Size(1476, 479);
+            this.dgvCompras.Size = new System.Drawing.Size(1411, 479);
             this.dgvCompras.TabIndex = 8;
-            // 
-            // btnSkuSearch
-            // 
-            this.btnSkuSearch.AutoSize = true;
-            this.btnSkuSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSkuSearch.Depth = 0;
-            this.btnSkuSearch.Icon = null;
-            this.btnSkuSearch.Location = new System.Drawing.Point(1221, 88);
-            this.btnSkuSearch.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSkuSearch.Name = "btnSkuSearch";
-            this.btnSkuSearch.Primary = true;
-            this.btnSkuSearch.Size = new System.Drawing.Size(124, 36);
-            this.btnSkuSearch.TabIndex = 36;
-            this.btnSkuSearch.Text = "Buscar SKU";
-            this.btnSkuSearch.UseVisualStyleBackColor = true;
-            this.btnSkuSearch.Click += new System.EventHandler(this.btnSkuSearch_Click);
             // 
             // materialLabel3
             // 
@@ -198,7 +181,6 @@
             this.ClientSize = new System.Drawing.Size(1600, 700);
             this.Controls.Add(this.txtQtd);
             this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.btnSkuSearch);
             this.Controls.Add(this.materialRaisedButton2);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
@@ -209,8 +191,6 @@
             this.Controls.Add(this.dgvCompras);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtSku);
-            this.MaximumSize = new System.Drawing.Size(1600, 700);
-            this.MinimumSize = new System.Drawing.Size(1600, 700);
             this.Name = "FrmEPay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EPay";
@@ -231,7 +211,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private System.Windows.Forms.DataGridView dgvCompras;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSkuSearch;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.TextBox txtQtd;
     }

@@ -47,7 +47,7 @@
             this.dgProdutos.RowHeadersVisible = false;
             this.dgProdutos.RowHeadersWidth = 51;
             this.dgProdutos.RowTemplate.Height = 24;
-            this.dgProdutos.Size = new System.Drawing.Size(773, 430);
+            this.dgProdutos.Size = new System.Drawing.Size(1282, 430);
             this.dgProdutos.TabIndex = 9;
             this.dgProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdutos_CellContentClick);
             // 
@@ -57,7 +57,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(673, 27);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(1182, 27);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -98,7 +98,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox1.Location = new System.Drawing.Point(12, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(804, 81);
+            this.groupBox1.Size = new System.Drawing.Size(1323, 81);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa";
@@ -110,7 +110,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.groupBox2.Location = new System.Drawing.Point(12, 179);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(804, 473);
+            this.groupBox2.Size = new System.Drawing.Size(1323, 473);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "SKUs";
@@ -119,11 +119,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 700);
+            this.ClientSize = new System.Drawing.Size(1452, 700);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.MaximumSize = new System.Drawing.Size(900, 700);
-            this.MinimumSize = new System.Drawing.Size(900, 700);
             this.Name = "FrmSkuSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SKUs";

@@ -16,11 +16,12 @@ namespace WowGames.Repositories
             using (var sqlCon = new SqlConnection(_connectionString))
             {
                 sqlCon.Open();
-                using (var cmd = new SqlCommand("INSERT INTO PartnerSKU VALUES (@SKU,@Description,@PartnerId)", sqlCon))
+                using (var cmd = new SqlCommand("INSERT INTO PartnerSKU VALUES (@SKU,@Description,@PartnerId,@valor)", sqlCon))
                 {
                     cmd.Parameters.Add(new SqlParameter("SKU", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = entity.SKU, Size = 50 });
                     cmd.Parameters.Add(new SqlParameter("Description", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = entity.Description, Size = -1 });
                     cmd.Parameters.Add(new SqlParameter("partnerId", SqlDbType.Int) { Direction = ParameterDirection.Input, Value = entity.PartnerId });
+                    cmd.Parameters.Add(new SqlParameter("valor", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = entity.Valor, Size = 10 });
                     cmd.ExecuteNonQuery();
                 }
                 sqlCon.Close();
@@ -63,6 +64,7 @@ namespace WowGames.Repositories
                             Description = dr["Description"].ToString(),
                             SKU = dr["Sku"].ToString(),
                             Partner = dr["Partner"].ToString(),
+                            Valor = dr["Valor"].ToString()
                         });
                     }
                 }
@@ -90,6 +92,7 @@ namespace WowGames.Repositories
                         Description = dr["Description"].ToString(),
                         SKU = dr["Sku"].ToString(),
                         Partner = dr["Partner"].ToString(),
+                        Valor = dr["Valor"].ToString()
                     };
 
 

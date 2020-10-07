@@ -11,57 +11,54 @@ namespace WowGames
     {
         readonly SkuRepository repository = new SkuRepository();
         readonly PartnerRepository partnerRepository = new PartnerRepository();
-        public delegate void SelectSku(object sender, string sku);
-        public event SelectSku OnSelectSku;
         private int partnerId;
         public FrmSkuSearch(int partnerId)
         {
-            this.partnerId = partnerId;
             InitializeComponent();
-            var font = new Font("Arial", 8.5F, GraphicsUnit.Point);
+            if (partnerId == 1)
+                Text = "SKUs RIXTY";
+            else if(partnerId == 3)
+                Text = "SKUs EPay";
+            this.partnerId = partnerId;
             dgProdutos.AutoGenerateColumns = false;
             dgProdutos.AutoSize = false;
+            dgProdutos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgProdutos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgProdutos.ReadOnly = true;
             dgProdutos.AllowUserToAddRows = false;
 
-            dgProdutos.ColumnCount = 5;
+            dgProdutos.ColumnCount = 7;
             dgProdutos.Columns[0].Visible = false;
             dgProdutos.Columns[0].HeaderText = "Id";
             dgProdutos.Columns[0].DataPropertyName = "Id";
-            dgProdutos.Columns[0].HeaderCell.Style.Font = font;
 
             dgProdutos.Columns[1].Visible = true;
             dgProdutos.Columns[1].HeaderText = "SKU";
             dgProdutos.Columns[1].DataPropertyName = "SKU";
-            dgProdutos.Columns[1].HeaderCell.Style.Font = font;
-            dgProdutos.Columns[1].Width = 200;
 
             dgProdutos.Columns[2].Visible = true;
             dgProdutos.Columns[2].HeaderText = "Descrição";
             dgProdutos.Columns[2].DataPropertyName = "Description";
-            dgProdutos.Columns[2].HeaderCell.Style.Font = font;
-            dgProdutos.Columns[2].Width = 243;
 
             dgProdutos.Columns[3].Visible = false;
             dgProdutos.Columns[3].DataPropertyName = "PartnerId";
-            dgProdutos.Columns[3].HeaderCell.Style.Font = font;
 
             dgProdutos.Columns[4].Visible = true;
             dgProdutos.Columns[4].HeaderText = "Parceiro";
             dgProdutos.Columns[4].DataPropertyName = "Partner";
-            dgProdutos.Columns[4].HeaderCell.Style.Font = font;
-            dgProdutos.Columns[4].Width = 100;
 
+            dgProdutos.Columns[5].Visible = true;
+            dgProdutos.Columns[5].HeaderText = "Valor";
+            dgProdutos.Columns[5].DataPropertyName = "Valor";
 
-            dgProdutos.DefaultCellStyle.Font = font;
-            var btn = new DataGridViewImageColumn
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn
             {
                 HeaderText = "",
-                Image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, "img", "check.png")),
-                Width = 33,
-                ImageLayout = DataGridViewImageCellLayout.Normal
+                UseColumnTextForButtonValue = true,
+                Text = "Comprar"
             };
             dgProdutos.Columns.Add(btn);
+            btnValidar_Click(null, null);
         }
 
         private void btnValidar_Click(object sender, EventArgs e)
@@ -87,13 +84,22 @@ namespace WowGames
 
             var senderGrid = (DataGridView)sender;
 
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewImageColumn &&
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
                 var row = senderGrid.Rows[e.RowIndex];
                 var sku = row.Cells[1].Value.ToString();
-                OnSelectSku?.Invoke(this, sku);
-                this.Close();
+                var valor = row.Cells[5].Value.ToString();
+                if (partnerId == 1)
+                {
+                    var frm = new FrmRixty(sku);
+                    frm.ShowDialog();
+                }
+                else if (partnerId == 3)
+                {
+                    var frm = new FrmEPay(sku,valor);
+                    frm.ShowDialog();
+                }
             }
         }
     }

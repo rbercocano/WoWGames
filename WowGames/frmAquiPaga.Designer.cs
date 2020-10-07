@@ -40,7 +40,7 @@
             this.dgProdutos.Name = "dgProdutos";
             this.dgProdutos.RowHeadersWidth = 51;
             this.dgProdutos.RowTemplate.Height = 24;
-            this.dgProdutos.Size = new System.Drawing.Size(1476, 545);
+            this.dgProdutos.Size = new System.Drawing.Size(1379, 545);
             this.dgProdutos.TabIndex = 9;
             this.dgProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdutos_CellContentClick);
             // 
@@ -50,7 +50,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(1286, 92);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(1210, 88);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -67,8 +67,6 @@
             this.ClientSize = new System.Drawing.Size(1600, 700);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.dgProdutos);
-            this.MaximumSize = new System.Drawing.Size(1600, 700);
-            this.MinimumSize = new System.Drawing.Size(1600, 700);
             this.Name = "frmAquiPaga";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aqui Paga";

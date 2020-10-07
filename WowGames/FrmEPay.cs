@@ -15,27 +15,44 @@ namespace WowGames
     {
         private static readonly object objLock = new object();
         private PurchaseRepository repository = new PurchaseRepository();
-        private readonly FrmSkuSearch frmSkuSearch = new FrmSkuSearch(3);
         private readonly EPayProxy proxy = new EPayProxy();
-        public FrmEPay()
+        public FrmEPay(string sku, string valor)
         {
             InitializeComponent();
 
             dgvCompras.AutoGenerateColumns = false;
-            dgvCompras.AllowUserToAddRows = false;
+            dgvCompras.AutoSize = false;
             dgvCompras.ReadOnly = true;
-            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PurchaseDate", Name = "Data Compra", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
-            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Sku", Name = "SKU", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
-            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Serial", Name = "Serial", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
-            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Token", Name = "Token", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
-            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "PaidPrice", Name = "Seu Preço", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
-            dgvCompras.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SuggestedPrice", Name = "Preço Sugerido", AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill });
-            frmSkuSearch.OnSelectSku += FrmSkuSearch_OnSelectSku;
-        }
+            dgvCompras.AllowUserToAddRows = false;
+            dgvCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCompras.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-        private void FrmSkuSearch_OnSelectSku(object sender, string sku)
-        {
+            dgvCompras.ColumnCount = 6;
+            dgvCompras.Columns[0].Visible = true;
+            dgvCompras.Columns[0].HeaderText = "Data / Hora";
+            dgvCompras.Columns[0].DataPropertyName = "PurchaseDate";
+
+            dgvCompras.Columns[1].Visible = true;
+            dgvCompras.Columns[1].HeaderText = "Montante";
+            dgvCompras.Columns[1].DataPropertyName = "PaidPrice";
+
+            dgvCompras.Columns[2].Visible = true;
+            dgvCompras.Columns[2].HeaderText = "Transaçao";
+            dgvCompras.Columns[2].DataPropertyName = "TransactionId";
+
+            dgvCompras.Columns[3].Visible = true;
+            dgvCompras.Columns[3].HeaderText = "PIN";
+            dgvCompras.Columns[3].DataPropertyName = "Token";
+
+            dgvCompras.Columns[4].Visible = true;
+            dgvCompras.Columns[4].HeaderText = "Serial Number";
+            dgvCompras.Columns[4].DataPropertyName = "Serial";
+
+            dgvCompras.Columns[5].Visible = true;
+            dgvCompras.Columns[5].HeaderText = "Recibo";
+            dgvCompras.Columns[5].DataPropertyName = "Receipt";
             txtSku.Text = sku;
+            txtValor.Text = valor;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -64,7 +81,7 @@ namespace WowGames
             var qtd = string.IsNullOrEmpty(txtQtd.Text) ? 0 : Convert.ToInt32(txtQtd.Text);
             var totalSucesso = 0;
             var amount = Convert.ToInt32(Convert.ToDecimal(txtValor.Text, CultureInfo.InvariantCulture) * 100);
-            Parallel.For(0, qtd, new ParallelOptions { MaxDegreeOfParallelism = 4 }, (i) =>
+            Parallel.For(0, qtd, new ParallelOptions { MaxDegreeOfParallelism = 10 }, (i) =>
                {
                    try
                    {
@@ -107,11 +124,6 @@ namespace WowGames
             lblSucesso.Text = $"{sucess.Count()}/{qtd}";
             dgvCompras.DataSource = purchases;
 
-        }
-
-        private void btnSkuSearch_Click(object sender, EventArgs e)
-        {
-            frmSkuSearch.ShowDialog();
         }
     }
 }

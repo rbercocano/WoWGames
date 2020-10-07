@@ -61,7 +61,7 @@
             // txtFim
             // 
             this.txtFim.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtFim.Location = new System.Drawing.Point(1155, 87);
+            this.txtFim.Location = new System.Drawing.Point(1088, 87);
             this.txtFim.Mask = "00/00/0000";
             this.txtFim.Name = "txtFim";
             this.txtFim.Size = new System.Drawing.Size(124, 28);
@@ -77,7 +77,7 @@
             this.dgvCompras.RowHeadersVisible = false;
             this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.RowTemplate.Height = 24;
-            this.dgvCompras.Size = new System.Drawing.Size(1476, 541);
+            this.dgvCompras.Size = new System.Drawing.Size(1377, 541);
             this.dgvCompras.TabIndex = 11;
             this.dgvCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompras_CellContentClick);
             this.dgvCompras.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCompras_CellFormatting);
@@ -88,7 +88,7 @@
             this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton1.Depth = 0;
             this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(1378, 84);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(1301, 84);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -130,7 +130,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(1034, 89);
+            this.materialLabel3.Location = new System.Drawing.Point(967, 89);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(86, 24);
@@ -150,8 +150,6 @@
             this.Controls.Add(this.txtFim);
             this.Controls.Add(this.txtIni);
             this.Controls.Add(this.txtSku);
-            this.MaximumSize = new System.Drawing.Size(1600, 700);
-            this.MinimumSize = new System.Drawing.Size(1600, 700);
             this.Name = "FrmRelCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras";
