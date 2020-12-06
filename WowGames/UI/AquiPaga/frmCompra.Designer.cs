@@ -141,7 +141,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(950, 666);
+            this.label8.Location = new System.Drawing.Point(712, 666);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(230, 25);
             this.label8.TabIndex = 24;
@@ -151,7 +151,7 @@
             // 
             this.lblSucesso.AutoSize = true;
             this.lblSucesso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSucesso.Location = new System.Drawing.Point(978, 666);
+            this.lblSucesso.Location = new System.Drawing.Point(948, 666);
             this.lblSucesso.Name = "lblSucesso";
             this.lblSucesso.Size = new System.Drawing.Size(0, 25);
             this.lblSucesso.TabIndex = 25;
@@ -160,7 +160,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(266, 666);
+            this.label9.Location = new System.Drawing.Point(206, 666);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(113, 25);
             this.label9.TabIndex = 26;
@@ -170,7 +170,7 @@
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(131, 666);
+            this.lblValor.Location = new System.Drawing.Point(336, 666);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(0, 25);
             this.lblValor.TabIndex = 27;

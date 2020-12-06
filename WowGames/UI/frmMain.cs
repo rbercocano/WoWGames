@@ -78,7 +78,7 @@ namespace WowGames
         private void sKUToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            var frm = new FrmSku    
+            var frm = new FrmSku
             {
                 MdiParent = this
             };
@@ -90,6 +90,16 @@ namespace WowGames
         {
 
             var frm = new FrmSkuSearch(3)
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
+        }
+
+        private void resgatarPINV2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmProdutosRixty
             {
                 MdiParent = this
             };

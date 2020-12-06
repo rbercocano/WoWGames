@@ -72,7 +72,7 @@ namespace WowGames
                     return;
                 }
 
-            var result = repository.Search(ini, fim, txtSku.Text);
+            var result = repository.Search(ini, fim, txtSku.Text, txtPIN.Text);
             dgvCompras.DataSource = result;
         }
 

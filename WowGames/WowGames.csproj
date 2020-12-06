@@ -53,70 +53,85 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmEPay.cs">
+    <Compile Include="Models\Rixty\RixtyProductDetails.cs" />
+    <Compile Include="Models\Rixty\RixtyProduct.cs" />
+    <Compile Include="Models\Rixty\RixtyProductResponse.cs" />
+    <Compile Include="UI\Rixty\FrmProdutosRixty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEPay.Designer.cs">
+    <Compile Include="UI\Rixty\FrmProdutosRixty.Designer.cs">
+      <DependentUpon>FrmProdutosRixty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EPay\FrmEPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EPay\FrmEPay.Designer.cs">
       <DependentUpon>FrmEPay.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSkuSearch.cs">
+    <Compile Include="UI\Rixty\FrmCompraRixtyV2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSkuSearch.Designer.cs">
+    <Compile Include="UI\Rixty\FrmCompraRixtyV2.Designer.cs">
+      <DependentUpon>FrmCompraRixtyV2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\General\FrmSkuSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\General\FrmSkuSearch.Designer.cs">
       <DependentUpon>FrmSkuSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSku.cs">
+    <Compile Include="UI\General\FrmSku.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSku.Designer.cs">
+    <Compile Include="UI\General\FrmSku.Designer.cs">
       <DependentUpon>FrmSku.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAquiPaga.cs">
+    <Compile Include="UI\AquiPaga\frmAquiPaga.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAquiPaga.Designer.cs">
+    <Compile Include="UI\AquiPaga\frmAquiPaga.Designer.cs">
       <DependentUpon>frmAquiPaga.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCompra.cs">
+    <Compile Include="UI\AquiPaga\frmCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCompra.Designer.cs">
+    <Compile Include="UI\AquiPaga\frmCompra.Designer.cs">
       <DependentUpon>frmCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="UI\General\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="UI\General\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="UI\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="UI\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBalance.cs">
+    <Compile Include="UI\Reports\FrmBalance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBalance.Designer.cs">
+    <Compile Include="UI\Reports\FrmBalance.Designer.cs">
       <DependentUpon>FrmBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRelCompras.cs">
+    <Compile Include="UI\Reports\FrmRelCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRelCompras.Designer.cs">
+    <Compile Include="UI\Reports\FrmRelCompras.Designer.cs">
       <DependentUpon>FrmRelCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRixty.cs">
+    <Compile Include="UI\Rixty\FrmRixty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRixty.Designer.cs">
+    <Compile Include="UI\Rixty\FrmRixty.Designer.cs">
       <DependentUpon>FrmRixty.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRixtyPinRecovery.cs">
+    <Compile Include="UI\Rixty\FrmRixtyPinRecovery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRixtyPinRecovery.Designer.cs">
+    <Compile Include="UI\Rixty\FrmRixtyPinRecovery.Designer.cs">
       <DependentUpon>FrmRixtyPinRecovery.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AquiPaga\AuthenticationResponse.cs" />
@@ -145,6 +160,7 @@
     <Compile Include="Models\Purchase.cs" />
     <Compile Include="Models\Rixty\Coupon.cs" />
     <Compile Include="Models\Rixty\PurchaseConfirmation.cs" />
+    <Compile Include="Models\Rixty\PurchaseInitiation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy\EPayProxy.cs" />
@@ -156,37 +172,43 @@
     <Compile Include="Repositories\PurchaseRepository.cs" />
     <Compile Include="Security\RixtySignature.cs" />
     <Compile Include="Session.cs" />
-    <EmbeddedResource Include="FrmEPay.resx">
+    <EmbeddedResource Include="UI\Rixty\FrmProdutosRixty.resx">
+      <DependentUpon>FrmProdutosRixty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EPay\FrmEPay.resx">
       <DependentUpon>FrmEPay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSkuSearch.resx">
+    <EmbeddedResource Include="UI\Rixty\FrmCompraRixtyV2.resx">
+      <DependentUpon>FrmCompraRixtyV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\General\FrmSkuSearch.resx">
       <DependentUpon>FrmSkuSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSku.resx">
+    <EmbeddedResource Include="UI\General\FrmSku.resx">
       <DependentUpon>FrmSku.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAquiPaga.resx">
+    <EmbeddedResource Include="UI\AquiPaga\frmAquiPaga.resx">
       <DependentUpon>frmAquiPaga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCompra.resx">
+    <EmbeddedResource Include="UI\AquiPaga\frmCompra.resx">
       <DependentUpon>frmCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="UI\General\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="UI\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBalance.resx">
+    <EmbeddedResource Include="UI\Reports\FrmBalance.resx">
       <DependentUpon>FrmBalance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRelCompras.resx">
+    <EmbeddedResource Include="UI\Reports\FrmRelCompras.resx">
       <DependentUpon>FrmRelCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRixty.resx">
+    <EmbeddedResource Include="UI\Rixty\FrmRixty.resx">
       <DependentUpon>FrmRixty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRixtyPinRecovery.resx">
+    <EmbeddedResource Include="UI\Rixty\FrmRixtyPinRecovery.resx">
       <DependentUpon>FrmRixtyPinRecovery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -225,5 +247,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

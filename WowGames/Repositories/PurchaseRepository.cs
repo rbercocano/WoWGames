@@ -35,7 +35,7 @@ namespace WowGames.Repositories
                 sqlCon.Close();
             }
         }
-        public List<Purchase> Search(DateTime? dataInicio, DateTime? dataFim, string sku)
+        public List<Purchase> Search(DateTime? dataInicio, DateTime? dataFim, string sku, string pin)
         {
             var retorno = new List<Purchase>();
             var where = " where 1 = 1 ";
@@ -45,6 +45,8 @@ namespace WowGames.Repositories
                 where += $"  AND CONVERT(VARCHAR,PURCHASEDATE,111)  <= '{dataFim.Value.ToString("yyyy/MM/dd")}'";
             if (!string.IsNullOrEmpty(sku))
                 where += "  AND Sku LIKE '%'+@sku+'%'";
+            if (!string.IsNullOrEmpty(pin))
+                where += "  AND Token = @pin";
             using (var sqlCon = new SqlConnection(_connectionString))
             {
                 sqlCon.Open();
@@ -52,6 +54,8 @@ namespace WowGames.Repositories
                 {
                     if (!string.IsNullOrEmpty(sku))
                         cmd.Parameters.Add(new SqlParameter("sku", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = sku, Size = 50 });
+                    if (!string.IsNullOrEmpty(pin))
+                        cmd.Parameters.Add(new SqlParameter("pin", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = pin, Size = 50 });
 
                     var dr = cmd.ExecuteReader();
                     while (dr.Read())

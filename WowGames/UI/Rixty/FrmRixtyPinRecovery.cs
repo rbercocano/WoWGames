@@ -40,7 +40,7 @@ namespace WowGames
             }
             txtPID.Text = result.PaymentId;
             txtCodProd.Text = result.ProductCode;
-            txtPrice.Text = result.TotalPrice;
+            txtPrice.Text = result.TotalPrice.ToString();
             txtQtd.Text = result.Quantity;
             txtProd.Text = result.ProductDescription;
 

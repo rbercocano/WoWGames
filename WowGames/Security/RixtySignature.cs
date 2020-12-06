@@ -14,6 +14,22 @@ namespace WowGames.Security
             var input = $"{applicationCode}{referenceId}{version}{validatedToken}{secret}";
             return Hash(input);
         }
+        public static string GeneratePurchaseInitiationSignature(string productCode, string referenceId, int quantity)
+        {
+            var secret = ConfigurationManager.AppSettings["RixtySecret"];
+            var version = ConfigurationManager.AppSettings["RixtyGoldApiVersion"];
+            var applicationCode = ConfigurationManager.AppSettings["RixtyAppCode"];
+            var input = $"{applicationCode}{productCode}{quantity}{referenceId}{version}{secret}";
+            return Hash(input);
+        }
+        public static string GenerateProductSignature()
+        {
+            var secret = ConfigurationManager.AppSettings["RixtySecret"];
+            var version = ConfigurationManager.AppSettings["RixtyGoldApiVersion"];
+            var applicationCode = ConfigurationManager.AppSettings["RixtyAppCode"];
+            var input = $"{applicationCode}{version}{secret}";
+            return Hash(input);
+        }
 
         private static string Hash(string input)
         {

@@ -16,7 +16,7 @@ namespace WowGames.Models.Rixty
         public string DeliveredQuantity { get; set; }
         public string Currency { get; set; }
         public string UnitPrice { get; set; }
-        public string TotalPrice { get; set; }
+        public double TotalPrice { get; set; }
         public string MerchantProductCode { get; set; }
         public string PurchaseStatusCode { get; set; }
         public DateTime PurchaseStatusDate { get; set; }

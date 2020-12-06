@@ -36,6 +36,8 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtPIN = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,13 +73,13 @@
             // dgvCompras
             // 
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompras.Location = new System.Drawing.Point(12, 147);
+            this.dgvCompras.Location = new System.Drawing.Point(12, 166);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
             this.dgvCompras.RowHeadersVisible = false;
             this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.RowTemplate.Height = 24;
-            this.dgvCompras.Size = new System.Drawing.Size(1377, 541);
+            this.dgvCompras.Size = new System.Drawing.Size(1377, 522);
             this.dgvCompras.TabIndex = 11;
             this.dgvCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompras_CellContentClick);
             this.dgvCompras.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCompras_CellFormatting);
@@ -137,11 +139,35 @@
             this.materialLabel3.TabIndex = 15;
             this.materialLabel3.Text = "Data Fim";
             // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(23, 131);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(41, 24);
+            this.materialLabel4.TabIndex = 17;
+            this.materialLabel4.Text = "PIN";
+            // 
+            // txtPIN
+            // 
+            this.txtPIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtPIN.Location = new System.Drawing.Point(94, 127);
+            this.txtPIN.MaxLength = 35;
+            this.txtPIN.Name = "txtPIN";
+            this.txtPIN.Size = new System.Drawing.Size(494, 28);
+            this.txtPIN.TabIndex = 16;
+            // 
             // FrmRelCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 700);
+            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.txtPIN);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
@@ -170,5 +196,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.TextBox txtPIN;
     }
 }
