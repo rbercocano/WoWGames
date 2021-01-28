@@ -40,3 +40,4 @@ E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.F
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\img\cancel.png
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmProdutosRixty.resources
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmCompraRixtyV2.resources
+E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csprojAssemblyReference.cache

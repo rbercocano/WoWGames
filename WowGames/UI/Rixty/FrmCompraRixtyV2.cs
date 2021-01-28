@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using WowGames.Models;
 using WowGames.Models.Rixty;
@@ -69,8 +70,8 @@ namespace WowGames
             }).ToList();
             var purchases = Enumerable.Range(0, total).Select(i => new Purchase
             {
-                PaidPrice = result.UnitPrice,
-                SuggestedPrice = data.SellingPrice,
+                PaidPrice = Parse(data.SellingPrice),
+                SuggestedPrice = result.UnitPrice,
                 Token = result.Coupons[i].Pins[0],
                 Serial = result.Coupons[i].Serials[0],
                 PartnerId = 1,
@@ -84,7 +85,10 @@ namespace WowGames
             lblSucesso.Text = $"{result.DeliveredQuantity}/{result.Quantity}";
             purchases.ForEach(repository.Add);
         }
-
+        public static string Parse(string input)
+        {
+            return input.ToString().Replace("R$", "").Replace(",", ".").Trim();
+        }
         private void FrmRixtyPinRecovery_Load(object sender, EventArgs e)
         {
 
