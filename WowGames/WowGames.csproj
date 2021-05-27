@@ -53,9 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\EPay\CatalogRequest.cs" />
+    <Compile Include="Models\EPay\CatalogResponse.cs" />
+    <Compile Include="Models\EpayProductPurchase.cs" />
     <Compile Include="Models\Rixty\RixtyProductDetails.cs" />
     <Compile Include="Models\Rixty\RixtyProduct.cs" />
     <Compile Include="Models\Rixty\RixtyProductResponse.cs" />
+    <Compile Include="UI\EPay\FrmCatalogoEpay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EPay\FrmCatalogoEpay.Designer.cs">
+      <DependentUpon>FrmCatalogoEpay.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Rixty\FrmProdutosRixty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +181,9 @@
     <Compile Include="Repositories\PurchaseRepository.cs" />
     <Compile Include="Security\RixtySignature.cs" />
     <Compile Include="Session.cs" />
+    <EmbeddedResource Include="UI\EPay\FrmCatalogoEpay.resx">
+      <DependentUpon>FrmCatalogoEpay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Rixty\FrmProdutosRixty.resx">
       <DependentUpon>FrmProdutosRixty.cs</DependentUpon>
     </EmbeddedResource>

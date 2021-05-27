@@ -17,7 +17,7 @@ namespace WowGames
             InitializeComponent();
             if (partnerId == 1)
                 Text = "SKUs RIXTY";
-            else if(partnerId == 3)
+            else if (partnerId == 3)
                 Text = "SKUs EPay";
             this.partnerId = partnerId;
             dgProdutos.AutoGenerateColumns = false;
@@ -97,7 +97,11 @@ namespace WowGames
                 }
                 else if (partnerId == 3)
                 {
-                    var frm = new FrmEPay(sku,valor);
+                    var frm = new FrmEPay(new EpayProductPurchase
+                    {
+                        SKU = sku,
+                        Preco = valor
+                    });
                     frm.ShowDialog();
                 }
             }

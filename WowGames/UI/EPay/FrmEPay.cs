@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
@@ -14,9 +15,11 @@ namespace WowGames
     public partial class FrmEPay : MaterialSkin.Controls.MaterialForm
     {
         private static readonly object objLock = new object();
-        private PurchaseRepository repository = new PurchaseRepository();
+        private readonly PurchaseRepository repository = new PurchaseRepository();
         private readonly EPayProxy proxy = new EPayProxy();
-        public FrmEPay(string sku, string valor)
+        private readonly EpayProductPurchase details;
+
+        public FrmEPay(EpayProductPurchase details)
         {
             InitializeComponent();
 
@@ -27,7 +30,7 @@ namespace WowGames
             dgvCompras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvCompras.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            dgvCompras.ColumnCount = 6;
+            dgvCompras.ColumnCount = 7;
             dgvCompras.Columns[0].Visible = true;
             dgvCompras.Columns[0].HeaderText = "Data / Hora";
             dgvCompras.Columns[0].DataPropertyName = "PurchaseDate";
@@ -51,8 +54,17 @@ namespace WowGames
             dgvCompras.Columns[5].Visible = true;
             dgvCompras.Columns[5].HeaderText = "Recibo";
             dgvCompras.Columns[5].DataPropertyName = "Receipt";
-            txtSku.Text = sku;
-            txtValor.Text = valor;
+
+            dgvCompras.Columns[6].Visible = true;
+            dgvCompras.Columns[6].HeaderText = "Limite";
+            dgvCompras.Columns[6].DataPropertyName = "Limit";
+
+            txtSku.Enabled = false;
+            txtValor.Enabled = false;
+
+            txtSku.Text = details.SKU;
+            txtValor.Text = details.Preco;
+            this.details = details;
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -68,7 +80,7 @@ namespace WowGames
         {
 
             var purchases = new List<Purchase>();
-            if (string.IsNullOrEmpty(txtValor.Text) || Convert.ToDecimal(txtValor.Text, CultureInfo.InvariantCulture) <= 0)
+            if (string.IsNullOrEmpty(txtQtd.Text) || Convert.ToDecimal(txtQtd.Text, CultureInfo.InvariantCulture) <= 0)
             {
                 MessageBox.Show("Informe uma quantidade maior que zero!", "Atenção", MessageBoxButtons.OK);
                 return;
@@ -80,8 +92,9 @@ namespace WowGames
             }
             var qtd = string.IsNullOrEmpty(txtQtd.Text) ? 0 : Convert.ToInt32(txtQtd.Text);
             var totalSucesso = 0;
-            var amount = Convert.ToInt32(Convert.ToDecimal(txtValor.Text, CultureInfo.InvariantCulture) * 100);
-            Parallel.For(0, qtd, new ParallelOptions { MaxDegreeOfParallelism = 10 }, (i) =>
+            var amount = details.Amount;//Convert.ToInt32(Convert.ToDecimal(txtValor.Text, CultureInfo.InvariantCulture) * 100);
+            var batch = Convert.ToInt32(ConfigurationManager.AppSettings["EPayBatchPurchase"]);
+            Parallel.For(0, qtd, new ParallelOptions { MaxDegreeOfParallelism = batch }, (i) =>
                {
                    try
                    {
@@ -98,7 +111,8 @@ namespace WowGames
                            PaidPrice = (Convert.ToDecimal(result.Amount) / 100).ToString(CultureInfo.InvariantCulture),
                            SuggestedPrice = (Convert.ToDecimal(result.Amount) / 100).ToString(CultureInfo.InvariantCulture),
                            Sku = txtSku.Text,
-                           Cancelled = false
+                           Cancelled = false,
+                           Limit = result.Limit
                        };
                        repository.Add(purchase);
                        lock (objLock)
@@ -110,12 +124,11 @@ namespace WowGames
                        var responseLog = $"ERRO: {ex.Message}";
                        purchases.Add(new Purchase
                        {
-                           Token = responseLog,
-                           Serial = "ERRO",
+                           Token = "",
+                           Serial = responseLog,
                            PurchaseDate = DateTime.Now,
-                           Sku = "ERRO",
-                           PaidPrice = "ERRO",
-                           SuggestedPrice = "ERRO",
+                           Sku = "ERRO"
+
                        });
                    }
                });

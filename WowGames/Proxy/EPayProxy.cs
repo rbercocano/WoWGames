@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.IO;
 using System.Net.Http;
 using System.Text;
 using WowGames.Models.EPay;
@@ -38,6 +39,8 @@ namespace WowGames.Proxy
             }
             catch (Exception ex)
             {
+                var path = Path.Combine(Environment.CurrentDirectory, "Logs", DateTime.Now.ToString("yyyyMMdd") + ".log");
+                File.WriteAllText(path, ex.ToString(), Encoding.UTF8);
                 throw new Exception($"ERRO AO CHAMAR DE VENDAS EPAY", ex);
             }
         }
@@ -75,6 +78,36 @@ namespace WowGames.Proxy
             catch (Exception ex)
             {
                 throw new Exception($"ERRO AO CHAMAR DE CANCELAMENTO DE VENDAS EPAY", ex);
+            }
+        }
+
+
+        public CatalogResponse GetCatalog()
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var url = $"{ConfigurationManager.AppSettings["EPayApi"]}";
+                    var request = new CatalogRequest();
+                    var xml = request.ToString();
+                    using (var stringContent = new StringContent(xml, Encoding.UTF8, "application/xml"))
+                    {
+                        var resp = client.PostAsync(url, stringContent).Result;
+                        resp.EnsureSuccessStatusCode();
+                        var resultXML = resp.Content.ReadAsStringAsync().Result;
+                        var response = CatalogResponse.LoadFromXML(resultXML);
+                        if (response.Result != "0")
+                            throw new Exception($"ERRO AO CHAMAR DE API DE CATALOGO EPAY - " + response.ResultText);
+                        return response;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                var path = Path.Combine(Environment.CurrentDirectory, "Logs", DateTime.Now.ToString("yyyyMMdd") + ".log");
+                File.WriteAllText(path, ex.ToString(), Encoding.UTF8);
+                throw new Exception($"ERRO AO CHAMAR DE VENDAS EPAY", ex);
             }
         }
     }

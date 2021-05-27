@@ -89,7 +89,7 @@ namespace WowGames
         private void ePayToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            var frm = new FrmSkuSearch(3)
+            var frm = new FrmCatalogoEpay()
             {
                 MdiParent = this
             };

@@ -16,6 +16,7 @@ namespace WowGames.Models
         public string Receipt { get; set; }
         public string TransactionId { get; set; }
         public bool Cancelled { get; set; }
+        public string Limit { get; set; }
         public DateTime? CancelDate { get; set; }
         public string Status { get { return Cancelled ? "Cancelado" : "Ativo"; } }
     }
