@@ -35,7 +35,9 @@
             this.resgatarPINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resgatarPINV2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aquiPagaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ePayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ePayToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.catálogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +64,7 @@
             this.partnerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MnRixty,
             this.aquiPagaToolStripMenuItem,
-            this.ePayToolStripMenuItem});
+            this.ePayToolStripMenuItem1});
             this.partnerToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.partnerToolStripMenuItem.Name = "partnerToolStripMenuItem";
             this.partnerToolStripMenuItem.Size = new System.Drawing.Size(84, 28);
@@ -82,21 +84,21 @@
             // compraToolStripMenuItem
             // 
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(203, 28);
             this.compraToolStripMenuItem.Text = "Compra";
             this.compraToolStripMenuItem.Click += new System.EventHandler(this.compraToolStripMenuItem_Click);
             // 
             // resgatarPINToolStripMenuItem
             // 
             this.resgatarPINToolStripMenuItem.Name = "resgatarPINToolStripMenuItem";
-            this.resgatarPINToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.resgatarPINToolStripMenuItem.Size = new System.Drawing.Size(203, 28);
             this.resgatarPINToolStripMenuItem.Text = "Resgatar PIN";
             this.resgatarPINToolStripMenuItem.Click += new System.EventHandler(this.resgatarPINToolStripMenuItem_Click);
             // 
             // resgatarPINV2ToolStripMenuItem
             // 
             this.resgatarPINV2ToolStripMenuItem.Name = "resgatarPINV2ToolStripMenuItem";
-            this.resgatarPINV2ToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.resgatarPINV2ToolStripMenuItem.Size = new System.Drawing.Size(203, 28);
             this.resgatarPINV2ToolStripMenuItem.Text = "Produtos";
             this.resgatarPINV2ToolStripMenuItem.Click += new System.EventHandler(this.resgatarPINV2ToolStripMenuItem_Click);
             // 
@@ -107,12 +109,28 @@
             this.aquiPagaToolStripMenuItem.Text = "Aqui Paga";
             this.aquiPagaToolStripMenuItem.Click += new System.EventHandler(this.aquiPagaToolStripMenuItem_Click);
             // 
-            // ePayToolStripMenuItem
+            // ePayToolStripMenuItem1
             // 
-            this.ePayToolStripMenuItem.Name = "ePayToolStripMenuItem";
-            this.ePayToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
-            this.ePayToolStripMenuItem.Text = "EPay";
-            this.ePayToolStripMenuItem.Click += new System.EventHandler(this.ePayToolStripMenuItem_Click);
+            this.ePayToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.catálogoToolStripMenuItem,
+            this.consultaBaseToolStripMenuItem});
+            this.ePayToolStripMenuItem1.Name = "ePayToolStripMenuItem1";
+            this.ePayToolStripMenuItem1.Size = new System.Drawing.Size(224, 28);
+            this.ePayToolStripMenuItem1.Text = "EPay";
+            // 
+            // catálogoToolStripMenuItem
+            // 
+            this.catálogoToolStripMenuItem.Name = "catálogoToolStripMenuItem";
+            this.catálogoToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.catálogoToolStripMenuItem.Text = "Catálogo";
+            this.catálogoToolStripMenuItem.Click += new System.EventHandler(this.catálogoToolStripMenuItem_Click);
+            // 
+            // consultaBaseToolStripMenuItem
+            // 
+            this.consultaBaseToolStripMenuItem.Name = "consultaBaseToolStripMenuItem";
+            this.consultaBaseToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.consultaBaseToolStripMenuItem.Text = "Consulta Base";
+            this.consultaBaseToolStripMenuItem.Click += new System.EventHandler(this.consultaBaseToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -188,7 +206,9 @@
         private System.Windows.Forms.ToolStripMenuItem resgatarPINToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sKUToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ePayToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resgatarPINV2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ePayToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem catálogoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaBaseToolStripMenuItem;
     }
 }

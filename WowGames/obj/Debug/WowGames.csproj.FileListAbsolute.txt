@@ -41,7 +41,6 @@ E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\img\cancel
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmProdutosRixty.resources
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmCompraRixtyV2.resources
 E:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csprojAssemblyReference.cache
-D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csprojAssemblyReference.cache
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmCatalogoEpay.resources
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmProdutosRixty.resources
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmEPay.resources

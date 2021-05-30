@@ -86,17 +86,6 @@ namespace WowGames
 
         }
 
-        private void ePayToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            var frm = new FrmCatalogoEpay()
-            {
-                MdiParent = this
-            };
-            frm.Show();
-
-        }
-
         private void resgatarPINV2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new FrmProdutosRixty
@@ -105,6 +94,25 @@ namespace WowGames
             };
             frm.Show();
 
+        }
+
+        private void catálogoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmCatalogoEpay()
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
+        }
+
+        private void consultaBaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmSkuSearch(3)
+            {
+                MdiParent = this
+            };
+            frm.Show();
         }
     }
 }

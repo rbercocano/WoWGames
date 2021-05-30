@@ -30,7 +30,7 @@ namespace WowGames
                 dt.Columns.Add("Preco");
                 dt.Columns.Add("Enabled");
                 dt.Columns.Add("Amount");
-                var products = catalog.CATALOG.ARTICLE;
+                var products = catalog.CATALOG.ARTICLE.OrderBy(a => a.PROVIDER.ToString());
                 DataRow dr;
                 foreach (var p in products)
                 {
@@ -41,7 +41,7 @@ namespace WowGames
                     dr[1] = p.PROVIDER.ToString();
                     dr[2] = info?.SKU;
                     dr[3] = (Convert.ToDecimal(p.AMOUNT.Text) / 100).ToString("C");
-                    dr[4] = p.ENABLED;
+                    dr[4] = p.ENABLED == "1" ? "Habilitado" : "Desabilitado";
                     dr[5] = Convert.ToDecimal(p.AMOUNT.Text);
                     dt.Rows.Add(dr);
                     idx++;
@@ -67,10 +67,12 @@ namespace WowGames
             dgProdutos.Columns[0].Visible = true;
             dgProdutos.Columns[0].HeaderText = "Nome";
             dgProdutos.Columns[0].DataPropertyName = "Nome";
+            dgProdutos.Columns[0].Width = 250;
 
             dgProdutos.Columns[1].Visible = true;
             dgProdutos.Columns[1].HeaderText = "Provider";
             dgProdutos.Columns[1].DataPropertyName = "Provider";
+            dgProdutos.Columns[1].Width = 200;
 
             dgProdutos.Columns[2].Visible = true;
             dgProdutos.Columns[2].HeaderText = "SKU";
@@ -79,10 +81,12 @@ namespace WowGames
             dgProdutos.Columns[3].Visible = true;
             dgProdutos.Columns[3].HeaderText = "Preço";
             dgProdutos.Columns[3].DataPropertyName = "Preco";
+            dgProdutos.Columns[3].Width = 100;
 
             dgProdutos.Columns[4].Visible = true;
             dgProdutos.Columns[4].HeaderText = "Enabled";
             dgProdutos.Columns[4].DataPropertyName = "Enabled";
+            dgProdutos.Columns[4].Width = 70;
 
             dgProdutos.Columns[5].Visible = false;
             dgProdutos.Columns[5].DataPropertyName = "Amount";
@@ -92,8 +96,10 @@ namespace WowGames
                 HeaderText = "",
                 UseColumnTextForButtonValue = true,
                 Text = "Comprar"
+
             };
             dgProdutos.Columns.Add(btn);
+            dgProdutos.Columns[6].Width = 100;
         }
 
         private void dgProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,13 +111,17 @@ namespace WowGames
                 e.RowIndex >= 0)
             {
                 var row = senderGrid.Rows[e.RowIndex];
-
+                if (row.Cells[4].Value.ToString().Equals("Desabilitado"))
+                {
+                    MessageBox.Show("Este produto está desabilitado!", "Atenção");
+                    return;
+                }
                 var details = new EpayProductPurchase
                 {
                     Nome = row.Cells[0].Value.ToString(),
                     Provider = row.Cells[1].Value.ToString(),
                     SKU = row.Cells[2].Value.ToString(),
-                    Preco = row.Cells[3].Value.ToString(),
+                    Preco = (Convert.ToDecimal(row.Cells[5].Value) / 100).ToString("#.##"),//row.Cells[3].Value.ToString(),
                     Enabled = row.Cells[4].Value.ToString(),
                     Amount = Convert.ToInt32(row.Cells[5].Value.ToString()),
                 };

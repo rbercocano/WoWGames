@@ -67,9 +67,9 @@
             this.ClientSize = new System.Drawing.Size(1600, 700);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.dgProdutos);
-            this.Name = "frmAquiPaga";
+            this.Name = "FrmCatalogoEpay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Aqui Paga";
+            this.Text = "Catálogo EPay";
             this.Load += new System.EventHandler(this.frmAquiPaga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).EndInit();
             this.ResumeLayout(false);

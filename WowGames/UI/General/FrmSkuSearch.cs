@@ -100,7 +100,8 @@ namespace WowGames
                     var frm = new FrmEPay(new EpayProductPurchase
                     {
                         SKU = sku,
-                        Preco = valor
+                        Preco = valor,
+                        //Amount = Convert.ToInt32(Convert.ToDecimal(valor) * 100)
                     });
                     frm.ShowDialog();
                 }

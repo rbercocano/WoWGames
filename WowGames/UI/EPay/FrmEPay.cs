@@ -60,7 +60,7 @@ namespace WowGames
             dgvCompras.Columns[6].DataPropertyName = "Limit";
 
             txtSku.Enabled = false;
-            txtValor.Enabled = false;
+            //txtValor.Enabled = false;
 
             txtSku.Text = details.SKU;
             txtValor.Text = details.Preco;
@@ -92,7 +92,7 @@ namespace WowGames
             }
             var qtd = string.IsNullOrEmpty(txtQtd.Text) ? 0 : Convert.ToInt32(txtQtd.Text);
             var totalSucesso = 0;
-            var amount = details.Amount;//Convert.ToInt32(Convert.ToDecimal(txtValor.Text, CultureInfo.InvariantCulture) * 100);
+            var amount = Convert.ToInt32(Convert.ToDecimal(txtValor.Text, CultureInfo.InvariantCulture) * 100);
             var batch = Convert.ToInt32(ConfigurationManager.AppSettings["EPayBatchPurchase"]);
             Parallel.For(0, qtd, new ParallelOptions { MaxDegreeOfParallelism = batch }, (i) =>
                {
@@ -112,7 +112,7 @@ namespace WowGames
                            SuggestedPrice = (Convert.ToDecimal(result.Amount) / 100).ToString(CultureInfo.InvariantCulture),
                            Sku = txtSku.Text,
                            Cancelled = false,
-                           Limit = result.Limit
+                           Limit = (Convert.ToDecimal(result.Limit) / 100).ToString(CultureInfo.InvariantCulture)
                        };
                        repository.Add(purchase);
                        lock (objLock)
@@ -132,7 +132,7 @@ namespace WowGames
                        });
                    }
                });
-            var sucess = purchases.Where(d => d.Serial != "ERRO");
+            var sucess = purchases.Where(d => d.Sku != "ERRO");
             lblValor.Text = $"{sucess.Sum(d => Convert.ToDecimal(d.PaidPrice, CultureInfo.InvariantCulture)):C}";
             lblSucesso.Text = $"{sucess.Count()}/{qtd}";
             dgvCompras.DataSource = purchases;

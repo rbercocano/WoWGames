@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using WowGames.Models;
+using System.Linq;
 using WowGames.Models.Rixty;
 using WowGames.Proxy;
 using WowGames.Repositories;
@@ -72,7 +72,7 @@ namespace WowGames
                 dt.Columns.Add("UnitPrice");
 
                 DataRow dr;
-                foreach (var p in products)
+                foreach (var p in products.OrderBy(p => p.ProductName))
                 {
                     dr = dt.NewRow();
                     dr[0] = p.ProductName;
@@ -104,6 +104,7 @@ namespace WowGames
             dgProdutos.Columns[0].Visible = true;
             dgProdutos.Columns[0].HeaderText = "Produto";
             dgProdutos.Columns[0].DataPropertyName = "Nome";
+            dgProdutos.Columns[0].Width = 250;
 
             dgProdutos.Columns[1].Visible = true;
             dgProdutos.Columns[1].HeaderText = "Descrição";
@@ -120,14 +121,17 @@ namespace WowGames
             dgProdutos.Columns[4].Visible = true;
             dgProdutos.Columns[4].HeaderText = "Comissão";
             dgProdutos.Columns[4].DataPropertyName = "Comission";
+            dgProdutos.Columns[4].Width = 60;
 
             dgProdutos.Columns[5].Visible = true;
             dgProdutos.Columns[5].HeaderText = "Preço Pago";
             dgProdutos.Columns[5].DataPropertyName = "SellingPrice";
+            dgProdutos.Columns[5].Width = 95;
 
             dgProdutos.Columns[6].Visible = true;
             dgProdutos.Columns[6].HeaderText = "Preço Venda";
             dgProdutos.Columns[6].DataPropertyName = "UnitPrice";
+            dgProdutos.Columns[6].Width = 110;
 
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn
             {
@@ -136,6 +140,7 @@ namespace WowGames
                 Text = "Comprar"
             };
             dgProdutos.Columns.Add(btn);
+            dgProdutos.Columns[7].Width = 85;
         }
 
         private void dgProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
