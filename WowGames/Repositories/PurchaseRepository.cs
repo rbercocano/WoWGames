@@ -99,5 +99,51 @@ namespace WowGames.Repositories
             }
 
         }
+
+        public List<PurchaseReport> GetPurchaseReport(DateTime? dataInicio, DateTime? dataFim)
+        {
+            var retorno = new List<PurchaseReport>();
+            var where = " where 1 = 1 ";
+            if (dataInicio.HasValue)
+                where += $"  AND CONVERT(VARCHAR,PurchaseDate,111)  >= '{dataInicio.Value.ToString("yyyy/MM/dd")}'";
+            if (dataFim.HasValue)
+                where += $"  AND CONVERT(VARCHAR,PurchaseDate,111)  <= '{dataFim.Value.ToString("yyyy/MM/dd")}'";
+            using (var sqlCon = new SqlConnection(_connectionString))
+            {
+                sqlCon.Open();
+                using (var cmd = new SqlCommand($@"SELECT X.Partner,X.Sku,X.Date,SUM(X.PaidPrice) As Total,COUNT(*) AS Qtd
+                                                    FROM 
+                                                    (SELECT 
+	                                                    P1.Partner,
+	                                                    P.Sku,
+	                                                    CAST(P.PaidPrice aS decimal(18,2)) AS PaidPrice, 
+	                                                    CAST(PurchaseDate AS DATE) as Date
+                                                    FROM PURCHASE P 
+                                                    JOIN PARTNER P1 ON P.PartnerId = P1.PartnerId
+                                                    {where}) X
+                                                    GROUP BY 
+	                                                    X.Partner,
+	                                                    X.Sku,
+	                                                    X.Date	
+                                                    ORDER BY Partner,Sku,Date", sqlCon))
+                {
+                    var dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        retorno.Add(new PurchaseReport
+                        {
+                            Sku = dr["Sku"].ToString(),
+                            Date = Convert.ToDateTime(dr["Date"]),
+                            Partner = dr["Partner"].ToString(),
+                            Qtd = Convert.ToInt32(dr["Qtd"].ToString()),
+                            Total = Convert.ToDecimal(dr["Total"].ToString()),
+                        }); ;
+                    }
+                }
+                sqlCon.Close();
+            }
+
+            return retorno;
+        }
     }
 }

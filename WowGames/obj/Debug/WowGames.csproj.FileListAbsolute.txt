@@ -70,3 +70,5 @@ D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\MaterialSk
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\Newtonsoft.Json.dll
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\Newtonsoft.Json.xml
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csproj.CopyComplete
+D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csprojAssemblyReference.cache
+D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmComprasSintetico.resources

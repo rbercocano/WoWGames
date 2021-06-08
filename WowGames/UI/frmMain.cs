@@ -114,5 +114,15 @@ namespace WowGames
             };
             frm.Show();
         }
+
+        private void relatórioComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var frm = new FrmComprasSintetico()
+            {
+                MdiParent = this
+            };
+            frm.Show();
+        }
     }
 }
