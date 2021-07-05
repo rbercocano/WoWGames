@@ -11,25 +11,26 @@ namespace WowGames.Proxy
     {
         public SaleResponse Sale(int amount, string ean)
         {
+            var request = new SaleRequest
+            {
+                Amount = amount,
+                Card = new Card
+                {
+                    EAN = ean
+                }
+            };
+            var xml = request.ToString();
+            var resultXML = "";
             try
             {
                 using (var client = new HttpClient())
                 {
                     var url = $"{ConfigurationManager.AppSettings["EPayApi"]}";
-                    var request = new SaleRequest
-                    {
-                        Amount = amount,
-                        Card = new Card
-                        {
-                            EAN = ean
-                        }
-                    };
-                    var xml = request.ToString();
                     using (var stringContent = new StringContent(xml, Encoding.UTF8, "application/xml"))
                     {
                         var resp = client.PostAsync(url, stringContent).Result;
                         resp.EnsureSuccessStatusCode();
-                        var resultXML = resp.Content.ReadAsStringAsync().Result;
+                        resultXML = resp.Content.ReadAsStringAsync().Result;
                         var response = SaleResponse.LoadFromXML(resultXML);
                         if (response.Result != "0")
                             throw new Exception($"ERRO AO CHAMAR DE VENDAS EPAY - " + response.ResultText);
@@ -40,7 +41,13 @@ namespace WowGames.Proxy
             catch (Exception ex)
             {
                 var path = Path.Combine(Environment.CurrentDirectory, "Logs", DateTime.Now.ToString("yyyyMMdd") + ".log");
-                File.WriteAllText(path, ex.ToString(), Encoding.UTF8);
+                var sb = new StringBuilder();
+                sb.AppendLine(ex.ToString());
+                sb.AppendLine("Request");
+                sb.AppendLine(xml);
+                sb.AppendLine("Response");
+                sb.AppendLine(resultXML);
+                File.WriteAllText(path, sb.ToString(), Encoding.UTF8);
                 throw new Exception($"ERRO AO CHAMAR DE VENDAS EPAY", ex);
             }
         }

@@ -5,6 +5,7 @@ using System.Linq;
 using WowGames.Models.Rixty;
 using WowGames.Proxy;
 using WowGames.Repositories;
+using System.Threading.Tasks;
 
 namespace WowGames
 {
