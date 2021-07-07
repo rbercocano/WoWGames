@@ -40,6 +40,8 @@
             this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.txtQtd = new System.Windows.Forms.TextBox();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtEAN = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +57,7 @@
             // txtValor
             // 
             this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtValor.Location = new System.Drawing.Point(475, 92);
+            this.txtValor.Location = new System.Drawing.Point(818, 90);
             this.txtValor.MaxLength = 6;
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(145, 28);
@@ -119,7 +121,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(406, 95);
+            this.materialLabel2.Location = new System.Drawing.Point(749, 93);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(54, 24);
@@ -158,7 +160,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel3.Location = new System.Drawing.Point(677, 94);
+            this.materialLabel3.Location = new System.Drawing.Point(1020, 92);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(106, 24);
@@ -168,17 +170,41 @@
             // txtQtd
             // 
             this.txtQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtQtd.Location = new System.Drawing.Point(800, 92);
+            this.txtQtd.Location = new System.Drawing.Point(1143, 90);
             this.txtQtd.MaxLength = 3;
             this.txtQtd.Name = "txtQtd";
             this.txtQtd.Size = new System.Drawing.Size(145, 28);
             this.txtQtd.TabIndex = 3;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(393, 94);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(47, 24);
+            this.materialLabel4.TabIndex = 39;
+            this.materialLabel4.Text = "EAN";
+            // 
+            // txtEAN
+            // 
+            this.txtEAN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtEAN.Location = new System.Drawing.Point(453, 90);
+            this.txtEAN.MaxLength = 35;
+            this.txtEAN.Name = "txtEAN";
+            this.txtEAN.Size = new System.Drawing.Size(234, 28);
+            this.txtEAN.TabIndex = 38;
             // 
             // FrmEPay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1600, 700);
+            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.txtEAN);
             this.Controls.Add(this.txtQtd);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialRaisedButton2);
@@ -213,5 +239,7 @@
         private System.Windows.Forms.DataGridView dgvCompras;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private System.Windows.Forms.TextBox txtQtd;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.TextBox txtEAN;
     }
 }

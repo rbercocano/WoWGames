@@ -60,9 +60,11 @@ namespace WowGames
             dgvCompras.Columns[6].DataPropertyName = "Limit";
 
             txtSku.Enabled = false;
+            txtEAN.Enabled = false;
             //txtValor.Enabled = false;
 
             txtSku.Text = details.SKU;
+            txtEAN.Text = details.EAN;
             txtValor.Text = details.Preco;
             this.details = details;
         }
@@ -85,11 +87,6 @@ namespace WowGames
                 MessageBox.Show("Informe uma quantidade maior que zero!", "Atenção", MessageBoxButtons.OK);
                 return;
             }
-            if (string.IsNullOrEmpty(txtSku.Text))
-            {
-                MessageBox.Show("Informe um SKU!", "Atenção", MessageBoxButtons.OK);
-                return;
-            }
             var qtd = string.IsNullOrEmpty(txtQtd.Text) ? 0 : Convert.ToInt32(txtQtd.Text);
             var totalSucesso = 0;
             var amount = Convert.ToInt32(Convert.ToDecimal(txtValor.Text, CultureInfo.InvariantCulture) * 100);
@@ -98,7 +95,7 @@ namespace WowGames
                {
                    try
                    {
-                       var result = proxy.Sale(amount, txtSku.Text);
+                       var result = proxy.Sale(amount, txtEAN.Text);
                        Interlocked.Increment(ref totalSucesso);
                        var purchase = new Purchase
                        {

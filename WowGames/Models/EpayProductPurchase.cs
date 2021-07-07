@@ -12,6 +12,7 @@ namespace WowGames.Models
         public int Amount { get; set; }
         public string Preco { get; set; }
         public string SKU { get; set; }
+        public string EAN { get; set; }
         public string Provider { get; set; }
         public string Enabled { get; set; }
 
