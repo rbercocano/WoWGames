@@ -65,7 +65,7 @@ namespace WowGames
 
             txtSku.Text = details.SKU;
             txtEAN.Text = details.EAN;
-            txtValor.Text = details.Preco;
+            txtValor.Text = Convert.ToDecimal(details.Preco, new CultureInfo("pt-BR")).ToString(CultureInfo.InvariantCulture);
             this.details = details;
         }
 

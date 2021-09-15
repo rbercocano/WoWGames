@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using WowGames.Proxy;
 using WowGames.Repositories;
@@ -72,7 +73,7 @@ namespace WowGames
                     return;
                 }
 
-            var result = repository.Search(ini, fim, txtSku.Text, txtPIN.Text);
+            var result = repository.Search(ini, fim, txtSku.Text, txtPIN.Lines.ToList());
             dgvCompras.DataSource = result;
         }
 

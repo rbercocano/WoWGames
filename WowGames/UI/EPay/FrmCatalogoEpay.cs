@@ -122,13 +122,14 @@ namespace WowGames
                     MessageBox.Show("Este produto está desabilitado!", "Atenção");
                     return;
                 }
+                var preco = Convert.ToDecimal(row.Cells[6].Value) == 0 ?"0.00" : (Convert.ToDecimal(row.Cells[6].Value) / 100).ToString("#.##");
                 var details = new EpayProductPurchase
                 {
                     Nome = row.Cells[0].Value.ToString(),
                     Provider = row.Cells[1].Value.ToString(),
                     SKU = row.Cells[2].Value.ToString(),
                     EAN = row.Cells[3].Value.ToString(),
-                    Preco = (Convert.ToDecimal(row.Cells[6].Value) / 100).ToString("#.##"),//row.Cells[3].Value.ToString(),
+                    Preco = preco,
                     Enabled = row.Cells[5].Value.ToString(),
                     Amount = Convert.ToInt32(row.Cells[6].Value.ToString()),
                 };

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 using WowGames.Models;
 
@@ -35,7 +36,7 @@ namespace WowGames.Repositories
                 sqlCon.Close();
             }
         }
-        public List<Purchase> Search(DateTime? dataInicio, DateTime? dataFim, string sku, string pin)
+        public List<Purchase> Search(DateTime? dataInicio, DateTime? dataFim, string sku, List<string> pins)
         {
             var retorno = new List<Purchase>();
             var where = " where 1 = 1 ";
@@ -45,8 +46,9 @@ namespace WowGames.Repositories
                 where += $"  AND CONVERT(VARCHAR,PURCHASEDATE,111)  <= '{dataFim.Value.ToString("yyyy/MM/dd")}'";
             if (!string.IsNullOrEmpty(sku))
                 where += "  AND Sku LIKE '%'+@sku+'%'";
-            if (!string.IsNullOrEmpty(pin))
-                where += "  AND Token = @pin";
+            pins = pins.Where(p => !string.IsNullOrWhiteSpace(p)).Select(p => $"'{p}'").ToList();
+            if (pins.Any())
+                where += $"  AND Token IN ({string.Join(",", pins)})";
             using (var sqlCon = new SqlConnection(_connectionString))
             {
                 sqlCon.Open();
@@ -54,8 +56,6 @@ namespace WowGames.Repositories
                 {
                     if (!string.IsNullOrEmpty(sku))
                         cmd.Parameters.Add(new SqlParameter("sku", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = sku, Size = 50 });
-                    if (!string.IsNullOrEmpty(pin))
-                        cmd.Parameters.Add(new SqlParameter("pin", SqlDbType.VarChar) { Direction = ParameterDirection.Input, Value = pin, Size = 50 });
 
                     var dr = cmd.ExecuteReader();
                     while (dr.Read())
