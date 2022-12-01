@@ -79,8 +79,6 @@ namespace WowGames
             });
             totalQuantity = totalQuantity == 0 ? 1 : totalQuantity;
             dgvResultado.DataSource = results;
-            //lblValor.Text = result.TotalPrice.ToString("C");
-            //lblSucesso.Text = $"{result.DeliveredQuantity}/{result.Quantity}";
             lblValor.Text = totalPrice.ToString("C");
             lblSucesso.Text = $"{totalDelivered}/{totalQuantity}";
             purchases.ForEach(repository.Add);
@@ -122,7 +120,7 @@ namespace WowGames
 
                 var pins = result.Coupons.SelectMany(c => c.Pins).ToList();
                 var serials = result.Coupons.SelectMany(c => c.Serials).ToList();
-                var total = pins.Count() > serials.Count() ? pins.Count() : serials.Count();
+                var total = pins.Count();
                 var pinSerials = new List<PinAndSerial>();
                 var items = Enumerable.Range(0, total).Select(i => new PurchaseResult
                 {

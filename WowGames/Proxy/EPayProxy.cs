@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using WowGames.Models.EPay;
@@ -40,7 +41,7 @@ namespace WowGames.Proxy
             }
             catch (Exception ex)
             {
-                var path = Path.Combine(Environment.CurrentDirectory, "Logs", DateTime.Now.ToString("yyyyMMdd") + ".log");
+                var path = Path.Combine(Environment.CurrentDirectory, "Logs", $"compra_epay_{DateTime.Now:yyyyMMdd}.log");
                 var sb = new StringBuilder();
                 sb.AppendLine(ex.ToString());
                 sb.AppendLine("Request");
@@ -54,36 +55,59 @@ namespace WowGames.Proxy
 
         public CancellationResponse Cancellation(int amount, string ean, string txref)
         {
+            CancellationResponse response = null;
+            var request = new SaleCancellation
+            {
+                Amount = amount,
+                TXREF = txref,
+                Card = new Card
+                {
+                    EAN = ean
+                }
+            };
+            var xml = request.ToString();
+            var resultXML = "";
             try
             {
                 using (var client = new HttpClient())
                 {
                     var url = $"{ConfigurationManager.AppSettings["EPayApi"]}";
-                    var request = new SaleCancellation
-                    {
-                        Amount = amount,
-                        TXREF = txref,
-                        Card = new Card
-                        {
-                            EAN = ean
-                        }
-                    };
 
-                    var xml = request.ToString();
+                    request.ToString();
                     using (var stringContent = new StringContent(xml, Encoding.UTF8, "application/xml"))
                     {
                         var resp = client.PostAsync(url, stringContent).Result;
                         resp.EnsureSuccessStatusCode();
-                        var resultXML = resp.Content.ReadAsStringAsync().Result;
-                        var response = CancellationResponse.LoadFromXML(resultXML);
+                        resultXML = resp.Content.ReadAsStringAsync().Result;
+                        response = CancellationResponse.LoadFromXML(resultXML);
                         if (response.Result != "0")
-                            throw new Exception($"ERRO AO CHAMAR DE VENDAS EPAY - " + response.ResultText);
+                            throw new EPayCancellationException($"ERRO AO CANCELAR - " + response.ResultText);
                         return response;
                     }
                 }
             }
+            catch (EPayCancellationException ex)
+            {
+                var path = Path.Combine(Environment.CurrentDirectory, "Logs", $"cancelamento_epay_{DateTime.Now:yyyyMMdd}.log");
+                var sb = new StringBuilder();
+                sb.AppendLine(ex.ToString());
+                sb.AppendLine("Request");
+                sb.AppendLine(xml);
+                sb.AppendLine("Response");
+                sb.AppendLine(resultXML);
+                File.WriteAllText(path, sb.ToString(), Encoding.UTF8);
+                throw;
+            }
             catch (Exception ex)
             {
+                var path = Path.Combine(Environment.CurrentDirectory, "Logs", $"cancelamento_epay_{DateTime.Now:yyyyMMdd}.log");
+                var sb = new StringBuilder();
+                sb.AppendLine(ex.ToString());
+                sb.AppendLine("Request");
+                sb.AppendLine(xml);
+                sb.AppendLine("Response");
+                sb.AppendLine(resultXML);
+                File.WriteAllText(path, sb.ToString(), Encoding.UTF8);
                 throw new Exception($"ERRO AO CHAMAR DE CANCELAMENTO DE VENDAS EPAY", ex);
             }
         }
@@ -112,7 +136,7 @@ namespace WowGames.Proxy
             }
             catch (Exception ex)
             {
-                var path = Path.Combine(Environment.CurrentDirectory, "Logs", DateTime.Now.ToString("yyyyMMdd") + ".log");
+                var path = Path.Combine(Environment.CurrentDirectory, "Logs", $"catalogo_epay_{DateTime.Now:yyyyMMdd}.log");
                 File.WriteAllText(path, ex.ToString(), Encoding.UTF8);
                 throw new Exception($"ERRO AO CHAMAR DE VENDAS EPAY", ex);
             }

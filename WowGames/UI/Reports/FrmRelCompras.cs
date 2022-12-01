@@ -96,13 +96,20 @@ namespace WowGames
                 if (MessageBox.Show($"Tem certeza que deseja cancelar esta compra?", "Atenção", MessageBoxButtons.YesNo) ==
                     DialogResult.Yes)
                 {
-                    var sku = row.Cells[1].Value.ToString();
-                    var amount = Convert.ToInt32(Convert.ToDecimal(row.Cells[5].Value) * 100);
-                    var txid = row.Cells[7].Value.ToString();
-                    var result = proxy.Cancellation(amount, sku, txid);
-                    repository.CancelPurchase(id);
-                    btnPesquisar_Click(null, null);
-                    MessageBox.Show($"Compra cancelada com sucesso.", "Sucesso", MessageBoxButtons.OK);
+                    try
+                    {
+                        var sku = row.Cells[1].Value.ToString();
+                        var amount = Convert.ToInt32(Convert.ToDecimal(row.Cells[5].Value) * 100);
+                        var txid = row.Cells[7].Value.ToString();
+                        var result = proxy.Cancellation(amount, sku, txid);
+                        repository.CancelPurchase(id);
+                        btnPesquisar_Click(null, null);
+                        MessageBox.Show($"Compra cancelada com sucesso.", "Sucesso", MessageBoxButtons.OK);
+                    }
+                    catch (EPayCancellationException ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
             }
         }

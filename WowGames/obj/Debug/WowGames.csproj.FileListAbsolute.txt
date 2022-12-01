@@ -72,3 +72,4 @@ D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\bin\Debug\Newtonsoft
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csproj.CopyComplete
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmComprasSintetico.resources
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csproj.AssemblyReference.cache
+D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csproj.SuggestedBindingRedirects.cache
