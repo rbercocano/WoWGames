@@ -108,7 +108,7 @@ namespace WowGames
                     }
                     catch (EPayCancellationException ex)
                     {
-                        MessageBox.Show(ex.ToString());
+                        MessageBox.Show(ex.Message);
                     }
                 }
             }

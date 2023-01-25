@@ -73,3 +73,4 @@ D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.c
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.FrmComprasSintetico.resources
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csproj.AssemblyReference.cache
 D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.csproj.SuggestedBindingRedirects.cache
+D:\Projects\ET IT\WowGames\WindowsFormsUI\WoWGames\WowGames\obj\Debug\WowGames.UI.CryptoVoucher.FrmVoucher.resources

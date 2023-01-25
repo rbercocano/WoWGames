@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using WowGames.UI.CryptoVoucher;
 
 namespace WowGames
 {
@@ -123,6 +124,17 @@ namespace WowGames
                 MdiParent = this
             };
             frm.Show();
+        }
+
+        private void voucherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var frm = new FrmVoucher()
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
         }
     }
 }

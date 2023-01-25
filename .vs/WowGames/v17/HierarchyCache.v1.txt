@@ -1,0 +1,261 @@
+﻿++Solution 'WowGames' ‎(1 of 1 project)
+i:{00000000-0000-0000-0000-000000000000}:WowGames.sln
+++WowGames
+i:{00000000-0000-0000-0000-000000000000}:WowGames
+++Properties
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\properties\
+++References
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++img
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\img\
+++Models
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\
+++Proxy
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\proxy\
+++Repositories
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\repositories\
+++Security
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\security\
+++RixtySignature.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\security\rixtysignature.cs
+++UI
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\
+++AquiPaga
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\aquipaga\
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\
+++EPay
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\epay\
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\epay\
+++General
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\general\
+++Reports
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\reports\
+++Rixty
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\rixty\
+++FrmCompraRixtyV2.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmcomprarixtyv2.cs
+++FrmProdutosRixty.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmprodutosrixty.cs
+++FrmRixty.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmrixty.cs
+++FrmRixtyPinRecovery.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmrixtypinrecovery.cs
+++frmMain.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\frmmain.cs
+++frmMain.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\frmmain.designer.cs
+++frmMain.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\frmmain.resx
+++App.config
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\app.config
+++packages.config
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\packages.config
+++Program.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\program.cs
+++Session.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\session.cs
+++AssemblyInfo.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\properties\assemblyinfo.cs
+++Resources.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\properties\resources.resx
+++Settings.settings
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\properties\settings.settings
+++MaterialSkin
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++Microsoft.CSharp
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++Newtonsoft.Json
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System.Configuration
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System.Core
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System.Data
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System.Data.DataSetExtensions
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System.Deployment
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System.Drawing
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System.Net.Http
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System.Windows.Forms
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System.Xml
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++System.Xml.Linq
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:
+++bin.png
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\img\bin.png
+++cancel.png
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\img\cancel.png
+++check.png
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\img\check.png
+++BalanceDetail.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\balancedetail.cs
+++EpayProductPurchase.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\epayproductpurchase.cs
+++Partner.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\partner.cs
+++PartnerSku.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\partnersku.cs
+++PinAndSerial.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\pinandserial.cs
+++ProductDetails.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\productdetails.cs
+++Purchase.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\purchase.cs
+++PurchaseReport.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\purchasereport.cs
+++AquiPagaProxy.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\proxy\aquipagaproxy.cs
+++EPayProxy.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\proxy\epayproxy.cs
+++RixtyProxy.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\proxy\rixtyproxy.cs
+++BalanceRepository.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\repositories\balancerepository.cs
+++PartnerRepository.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\repositories\partnerrepository.cs
+++PurchaseRepository.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\repositories\purchaserepository.cs
+++SkuRepository.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\repositories\skurepository.cs
+++frmAquiPaga.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\aquipaga\frmaquipaga.cs
+++frmCompra.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\aquipaga\frmcompra.cs
+++FrmCatalogoEpay.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\epay\frmcatalogoepay.cs
+++FrmEPay.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\epay\frmepay.cs
+++frmLogin.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\general\frmlogin.cs
+++FrmSku.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\general\frmsku.cs
+++FrmSkuSearch.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\general\frmskusearch.cs
+++FrmBalance.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\reports\frmbalance.cs
+++FrmComprasSintetico.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\reports\frmcomprassintetico.cs
+++FrmRelCompras.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\reports\frmrelcompras.cs
+++FrmCompraRixtyV2.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmcomprarixtyv2.designer.cs
+++FrmCompraRixtyV2.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmcomprarixtyv2.resx
+++FrmProdutosRixty.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmprodutosrixty.designer.cs
+++FrmProdutosRixty.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmprodutosrixty.resx
+++FrmRixty.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmrixty.designer.cs
+++FrmRixty.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmrixty.resx
+++FrmRixtyPinRecovery.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmrixtypinrecovery.designer.cs
+++FrmRixtyPinRecovery.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\rixty\frmrixtypinrecovery.resx
+++Resources.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\properties\resources.designer.cs
+++Settings.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\properties\settings.designer.cs
+++AuthenticationRequest.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\authenticationrequest.cs
+++AuthenticationResponse.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\authenticationresponse.cs
+++PaymentResultData.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\paymentresultdata.cs
+++Product.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\product.cs
+++ProductOptionsList.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\productoptionslist.cs
+++ProductRequest.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\productrequest.cs
+++ProductResponse.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\productresponse.cs
+++ProductType.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\producttype.cs
+++ProductTypeRequest.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\producttyperequest.cs
+++ProductTypeResponse.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\producttyperesponse.cs
+++PurchaseDetails.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\purchasedetails.cs
+++ResponseBase.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\responsebase.cs
+++TransactionRequest.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\transactionrequest.cs
+++TransactionResponse.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\aquipaga\transactionresponse.cs
+++CancellationResponse.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\epay\cancellationresponse.cs
+++CatalogRequest.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\epay\catalogrequest.cs
+++CatalogResponse.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\epay\catalogresponse.cs
+++SaleCancellation.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\epay\salecancellation.cs
+++SaleRequest.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\epay\salerequest.cs
+++SaleResponse.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\epay\saleresponse.cs
+++Coupon.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\rixty\coupon.cs
+++PurchaseConfirmation.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\rixty\purchaseconfirmation.cs
+++PurchaseInitiation.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\rixty\purchaseinitiation.cs
+++RixtyProduct.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\rixty\rixtyproduct.cs
+++RixtyProductDetails.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\rixty\rixtyproductdetails.cs
+++RixtyProductResponse.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\models\rixty\rixtyproductresponse.cs
+++frmAquiPaga.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\aquipaga\frmaquipaga.designer.cs
+++frmAquiPaga.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\aquipaga\frmaquipaga.resx
+++frmCompra.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\aquipaga\frmcompra.designer.cs
+++frmCompra.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\aquipaga\frmcompra.resx
+++FrmCatalogoEpay.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\epay\frmcatalogoepay.designer.cs
+++FrmCatalogoEpay.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\epay\frmcatalogoepay.resx
+++FrmEPay.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\epay\frmepay.designer.cs
+++FrmEPay.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\epay\frmepay.resx
+++frmLogin.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\general\frmlogin.designer.cs
+++frmLogin.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\general\frmlogin.resx
+++FrmSku.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\general\frmsku.designer.cs
+++FrmSku.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\general\frmsku.resx
+++FrmSkuSearch.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\general\frmskusearch.designer.cs
+++FrmSkuSearch.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\general\frmskusearch.resx
+++FrmBalance.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\reports\frmbalance.designer.cs
+++FrmBalance.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\reports\frmbalance.resx
+++FrmComprasSintetico.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\reports\frmcomprassintetico.designer.cs
+++FrmComprasSintetico.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\reports\frmcomprassintetico.resx
+++FrmRelCompras.Designer.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\reports\frmrelcompras.designer.cs
+++FrmRelCompras.resx
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\ui\reports\frmrelcompras.resx
+++EPayCancellationException.cs
+i:{01134bd3-22c0-4f9d-959b-ca48c90fb3fb}:d:\projects\et it\wowgames\windowsformsui\wowgames\wowgames\epaycancellationexception.cs

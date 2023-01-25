@@ -55,6 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EPayCancellationException.cs" />
+    <Compile Include="Models\CryptoVoucher\GetBalanceResponse.cs" />
+    <Compile Include="Models\CryptoVoucher\CreateVoucherResponse.cs" />
+    <Compile Include="Models\CryptoVoucher\CreateVoucherRequest.cs" />
+    <Compile Include="Models\CryptoVoucher\Credentials.cs" />
+    <Compile Include="Models\CryptoVoucher\GetVoucherResponse.cs" />
     <Compile Include="Models\EPay\CatalogRequest.cs" />
     <Compile Include="Models\EPay\CatalogResponse.cs" />
     <Compile Include="Models\EpayProductPurchase.cs" />
@@ -62,6 +67,13 @@
     <Compile Include="Models\Rixty\RixtyProductDetails.cs" />
     <Compile Include="Models\Rixty\RixtyProduct.cs" />
     <Compile Include="Models\Rixty\RixtyProductResponse.cs" />
+    <Compile Include="Proxy\CryptoVoucherProxy.cs" />
+    <Compile Include="UI\CryptoVoucher\FrmVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CryptoVoucher\FrmVoucher.Designer.cs">
+      <DependentUpon>FrmVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\EPay\FrmCatalogoEpay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +202,9 @@
     <Compile Include="Repositories\PurchaseRepository.cs" />
     <Compile Include="Security\RixtySignature.cs" />
     <Compile Include="Session.cs" />
+    <EmbeddedResource Include="UI\CryptoVoucher\FrmVoucher.resx">
+      <DependentUpon>FrmVoucher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\EPay\FrmCatalogoEpay.resx">
       <DependentUpon>FrmCatalogoEpay.cs</DependentUpon>
     </EmbeddedResource>
