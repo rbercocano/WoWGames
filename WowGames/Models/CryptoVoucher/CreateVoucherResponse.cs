@@ -7,6 +7,7 @@ namespace WowGames.Models.CryptoVoucher
         public DateTime CreatedAt { get; set; }
         public string Code { get; set; }
         public string OrderId { get; set; }
+        public string Status { get; set; }
 
     }
 }

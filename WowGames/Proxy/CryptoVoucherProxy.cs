@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Net.Http;
@@ -89,7 +90,7 @@ namespace WowGames.Proxy
                 throw new Exception($"ERRO AO CHAMAR API CREATE VOUCHER - CRYPTO VOUCHER", ex);
             }
         }
-        public GetBalanceResponse GetBalance()
+        public List<GetBalanceResponse> GetBalance()
         {
             var url = $"{ConfigurationManager.AppSettings["CryptoVoucherAPIUrl"]}/partner";
             string json = null;
@@ -111,7 +112,7 @@ namespace WowGames.Proxy
                     var resp = client.PostAsync(url, content).Result;
                     resultJson = resp.Content.ReadAsStringAsync().Result;
                     resp.EnsureSuccessStatusCode();
-                    var result = JsonConvert.DeserializeObject<GetBalanceResponse>(resultJson);
+                    var result = JsonConvert.DeserializeObject<List<GetBalanceResponse>>(resultJson);
                     return result;
                 }
             }
