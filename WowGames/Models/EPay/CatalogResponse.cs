@@ -15,7 +15,7 @@ namespace WowGames.Models.EPay
         public string Text { get; set; }
         public override string ToString()
         {
-            return $"{ID} - {Text}";
+            return $"{Text}";
         }
     }
 
@@ -35,6 +35,8 @@ namespace WowGames.Models.EPay
     [XmlRoot(ElementName = "INFO")]
     public class INFO
     {
+        [XmlElement(ElementName = "DISPLAY_NAME")]
+        public string DISPLAY_NAME { get; set; }
         [XmlElement(ElementName = "SKU")]
         public string SKU { get; set; }
         [XmlElement(ElementName = "COUNTRY")]
@@ -134,6 +136,8 @@ namespace WowGames.Models.EPay
         public string EAN { get; set; }
         [XmlElement(ElementName = "NAME")]
         public string NAME { get; set; }
+        [XmlElement(ElementName = "DISPLAY_NAME")]
+        public string DISPLAY_NAME { get; set; }
         [XmlElement(ElementName = "USAGE")]
         public string USAGE { get; set; }
         [XmlElement(ElementName = "PROVIDER")]
@@ -146,6 +150,14 @@ namespace WowGames.Models.EPay
         public MEDIA MEDIA { get; set; }
         [XmlAttribute(AttributeName = "ID")]
         public string ID { get; set; }
+        [XmlIgnore]
+        public string Description
+        {
+            get
+            {
+                return string.IsNullOrWhiteSpace(NAME) ? DISPLAY_NAME : NAME;
+            }
+        }
     }
 
     [XmlRoot(ElementName = "CATALOG")]

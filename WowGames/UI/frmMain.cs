@@ -136,5 +136,54 @@ namespace WowGames
             frm.Show();
 
         }
+
+        private void listaDeJogosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPinupGames()
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
+        }
+
+        private void listaDeVouchersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPinupVoucherList()
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
+        }
+
+        private void gameOrderInquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPinupOrderInquiry()
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
+        }
+
+        private void voucherInquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPinupVoucherInquiry()
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
+        }
+
+        private void voucherBalanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPinupBalanceInquiry()
+            {
+                MdiParent = this
+            };
+            frm.Show();
+        }
     }
 }

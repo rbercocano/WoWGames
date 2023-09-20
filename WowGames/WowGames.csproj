@@ -67,7 +67,18 @@
     <Compile Include="Models\Rixty\RixtyProductDetails.cs" />
     <Compile Include="Models\Rixty\RixtyProduct.cs" />
     <Compile Include="Models\Rixty\RixtyProductResponse.cs" />
+    <Compile Include="Models\TopUp\InquiryResult.cs" />
+    <Compile Include="Models\TopUp\ValidateUserResult.cs" />
+    <Compile Include="Models\TopUp\GameDetailsResult.cs" />
+    <Compile Include="Models\TopUp\GamesListResult.cs" />
+    <Compile Include="Models\TopUp\OrderResult.cs" />
+    <Compile Include="Models\UnipinVoucher\BalanceResult.cs" />
+    <Compile Include="Models\UnipinVoucher\VoucherDetailsResult.cs" />
+    <Compile Include="Models\UnipinVoucher\VoucherListResult.cs" />
+    <Compile Include="Models\UnipinVoucher\VoucherRequestResult.cs" />
     <Compile Include="Proxy\CryptoVoucherProxy.cs" />
+    <Compile Include="Proxy\UnipinVoucherProxy.cs" />
+    <Compile Include="Proxy\UnipinTopUpProxy.cs" />
     <Compile Include="UI\CryptoVoucher\FrmVoucher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +90,48 @@
     </Compile>
     <Compile Include="UI\EPay\FrmCatalogoEpay.Designer.cs">
       <DependentUpon>FrmCatalogoEpay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupVoucherInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupVoucherInquiry.Designer.cs">
+      <DependentUpon>frmPinupVoucherInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupVoucherDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupVoucherDetails.Designer.cs">
+      <DependentUpon>frmPinupVoucherDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupVoucherStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupVoucherStock.Designer.cs">
+      <DependentUpon>frmPinupVoucherStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupVoucherList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupVoucherList.Designer.cs">
+      <DependentUpon>frmPinupVoucherList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupOrderInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupOrderInquiry.Designer.cs">
+      <DependentUpon>frmPinupOrderInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupGameDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupGameDetails.Designer.cs">
+      <DependentUpon>frmPinupGameDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupGames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupGames.Designer.cs">
+      <DependentUpon>frmPinupGames.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Reports\FrmComprasSintetico.cs">
       <SubType>Form</SubType>
@@ -207,6 +260,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EPay\FrmCatalogoEpay.resx">
       <DependentUpon>FrmCatalogoEpay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pinup\frmPinupVoucherInquiry.resx">
+      <DependentUpon>frmPinupVoucherInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pinup\frmPinupVoucherDetails.resx">
+      <DependentUpon>frmPinupVoucherDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pinup\frmPinupVoucherStock.resx">
+      <DependentUpon>frmPinupVoucherStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pinup\frmPinupVoucherList.resx">
+      <DependentUpon>frmPinupVoucherList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pinup\frmPinupOrderInquiry.resx">
+      <DependentUpon>frmPinupOrderInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pinup\frmPinupGameDetails.resx">
+      <DependentUpon>frmPinupGameDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pinup\frmPinupGames.resx">
+      <DependentUpon>frmPinupGames.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Reports\FrmComprasSintetico.resx">
       <DependentUpon>FrmComprasSintetico.cs</DependentUpon>
