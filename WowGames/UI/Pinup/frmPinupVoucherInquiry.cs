@@ -53,9 +53,9 @@ namespace WowGames
                 if (inquiry.Status == 1)
                 {
                     lblTrans.Text = inquiry.Order;
-                    lblValor.Text = (Convert.ToDecimal(inquiry.Amount) / 100).ToString(CultureInfo.InvariantCulture);
+                    lblValor.Text = inquiry.Amount.ToString(CultureInfo.InvariantCulture);
                     lblCurrency.Text = inquiry.Currency;
-                    lblBalance.Text = (Convert.ToDecimal(inquiry.Balance) / 100).ToString(CultureInfo.InvariantCulture);
+                    lblBalance.Text = inquiry.Balance.ToString(CultureInfo.InvariantCulture);
                     var dt = new DataTable();
                     dt.Columns.Add("Serial_1");
                     dt.Columns.Add("Serial_2");

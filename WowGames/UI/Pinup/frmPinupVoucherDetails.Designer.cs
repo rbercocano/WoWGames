@@ -96,6 +96,7 @@
             this.dgProdutos.RowTemplate.Height = 24;
             this.dgProdutos.Size = new System.Drawing.Size(1120, 410);
             this.dgProdutos.TabIndex = 20;
+            this.dgProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdutos_CellContentClick);
             // 
             // materialLabel3
             // 
@@ -113,7 +114,6 @@
             // 
             // txtQtd
             // 
-            this.txtQtd.Enabled = false;
             this.txtQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtQtd.Location = new System.Drawing.Point(1031, 93);
             this.txtQtd.Margin = new System.Windows.Forms.Padding(2);

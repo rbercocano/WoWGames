@@ -36,7 +36,7 @@ namespace WowGames
                 if (inquiry.Status == 1)
                 {
                     lblTrans.Text = inquiry.TransactionId;
-                    lblValor.Text = (Convert.ToDecimal(inquiry.Amount) / 100).ToString(CultureInfo.InvariantCulture);
+                    lblValor.Text = inquiry.Amount.ToString(CultureInfo.InvariantCulture);
                     lblName.Text = inquiry.Item;
                     lblCurrency.Text = inquiry.Currency;
                 }

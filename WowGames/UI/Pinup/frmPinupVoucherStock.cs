@@ -25,7 +25,7 @@ namespace WowGames
             dgProdutos.AllowUserToAddRows = false;
 
             dgProdutos.ColumnCount = 2;
-            dgProdutos.Columns[0].Visible = false;
+            dgProdutos.Columns[0].Visible = true;
             dgProdutos.Columns[0].HeaderText = "Codigo";
             dgProdutos.Columns[0].DataPropertyName = "Codigo";
 
@@ -38,7 +38,7 @@ namespace WowGames
                 var voucherResult = proxy.GetVoucherStock();
                 var dt = new DataTable();
                 dt.Columns.Add("Codigo");
-                dt.Columns.Add("Nome");
+                dt.Columns.Add("Quantidade");
 
                 DataRow dr;
                 foreach (var p in voucherResult)

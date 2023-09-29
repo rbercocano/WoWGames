@@ -185,5 +185,15 @@ namespace WowGames
             };
             frm.Show();
         }
+
+        private void estoqueVouchersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPinupVoucherStock()
+            {
+                MdiParent = this
+            };
+            frm.Show();
+
+        }
     }
 }

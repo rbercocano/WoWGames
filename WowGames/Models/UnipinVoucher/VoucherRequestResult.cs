@@ -8,7 +8,7 @@ namespace WowGames.Models.UnipinVoucher
         [JsonProperty("message")]
         public string Message { get; set; }
         [JsonProperty("reference_no")]
-        public int RefNumber { get; set; }
+        public string RefNumber { get; set; }
         [JsonProperty("order")]
         public string Order { get; set; }
         [JsonProperty("total_amount")]

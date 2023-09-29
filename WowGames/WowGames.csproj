@@ -91,6 +91,12 @@
     <Compile Include="UI\EPay\FrmCatalogoEpay.Designer.cs">
       <DependentUpon>FrmCatalogoEpay.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Pinup\frmPinupBalanceInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Pinup\frmPinupBalanceInquiry.Designer.cs">
+      <DependentUpon>frmPinupBalanceInquiry.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Pinup\frmPinupVoucherInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EPay\FrmCatalogoEpay.resx">
       <DependentUpon>FrmCatalogoEpay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Pinup\frmPinupBalanceInquiry.resx">
+      <DependentUpon>frmPinupBalanceInquiry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Pinup\frmPinupVoucherInquiry.resx">
       <DependentUpon>frmPinupVoucherInquiry.cs</DependentUpon>

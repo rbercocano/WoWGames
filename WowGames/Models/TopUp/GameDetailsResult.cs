@@ -33,6 +33,7 @@ namespace WowGames.Models.TopUp
     {
         public string Name { get; set; }
         public string Type { get; set; }
+        public string Data { get; set; }
     }
     public class Denomination
     {

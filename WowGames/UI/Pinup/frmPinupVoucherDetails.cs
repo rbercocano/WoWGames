@@ -32,7 +32,7 @@ namespace WowGames
             dgProdutos.ReadOnly = true;
             dgProdutos.AllowUserToAddRows = false;
 
-            dgProdutos.ColumnCount = 5;
+            dgProdutos.ColumnCount = 4;
             dgProdutos.Columns[0].Visible = false;
             dgProdutos.Columns[0].HeaderText = "Code";
             dgProdutos.Columns[0].DataPropertyName = "Codigo";
@@ -95,6 +95,7 @@ namespace WowGames
             {
                 var row = senderGrid.Rows[e.RowIndex];
                 var code = row.Cells[0].Value.ToString();
+                var name = row.Cells[1].Value.ToString();
                 if (string.IsNullOrEmpty(txtQtd.Text) || Convert.ToInt32(txtQtd.Text) < 1 || Convert.ToInt32(txtQtd.Text) > 10)
                 {
                     MessageBox.Show("Informe uma quantidade entre 1 e 10", "Atenção");
@@ -104,20 +105,24 @@ namespace WowGames
                 var result = proxy.RequestVoucher(code, Convert.ToInt32(txtQtd.Text), Guid.NewGuid().ToString());
                 if (result.Status == 1)
                 {
-                    repository.Add(new Purchase
+                    foreach (var item in result.Items)
                     {
-                        Receipt = string.Empty,
-                        PartnerId = 4,
-                        PurchaseDate = DateTime.Now,
-                        TransactionId = result.RefNumber.ToString(),
-                        Serial = result.RefNumber.ToString(),
-                        Token = result.RefNumber.ToString(),
-                        PaidPrice = (Convert.ToDecimal(result.Amount) / 100).ToString(CultureInfo.InvariantCulture),
-                        SuggestedPrice = (Convert.ToDecimal(result.Amount) / 100).ToString(CultureInfo.InvariantCulture),
-                        Sku = result.RefNumber.ToString(),
-                        Cancelled = false,
-                        Limit = string.Empty
-                    });
+                        repository.Add(new Purchase
+                        {
+                            Receipt = string.Empty,
+                            PartnerId = 5,
+                            PurchaseDate = DateTime.Now,
+                            TransactionId = result.RefNumber.ToString(),
+                            Serial = item.Serial1,
+                            Token = item.Serial2,
+                            PaidPrice = result.Amount.ToString(CultureInfo.InvariantCulture),
+                            SuggestedPrice = "",
+                            Sku = result.RefNumber.ToString(),
+                            Cancelled = false,
+                            Limit = string.Empty
+                        });
+                    }
+                    MessageBox.Show($"Transação efetuada com sucesso. Voucher: {name}", "Sucesso");
                 }
                 else
                     MessageBox.Show(result.Message, "Erro");

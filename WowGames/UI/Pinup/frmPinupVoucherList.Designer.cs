@@ -42,6 +42,7 @@
             this.dgProdutos.RowTemplate.Height = 24;
             this.dgProdutos.Size = new System.Drawing.Size(696, 410);
             this.dgProdutos.TabIndex = 20;
+            this.dgProdutos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProdutos_CellContentClick);
             // 
             // frmPinupVoucherList
             // 

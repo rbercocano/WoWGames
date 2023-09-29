@@ -29,8 +29,8 @@ namespace WowGames
             dgProdutos.ReadOnly = true;
             dgProdutos.AllowUserToAddRows = false;
 
-            dgProdutos.ColumnCount = 3;
-            dgProdutos.Columns[0].Visible = false;
+            dgProdutos.ColumnCount = 2;
+            dgProdutos.Columns[0].Visible = true;
             dgProdutos.Columns[0].HeaderText = "Codigo";
             dgProdutos.Columns[0].DataPropertyName = "Codigo";
 
@@ -79,7 +79,8 @@ namespace WowGames
             {
                 var row = senderGrid.Rows[e.RowIndex];
                 var id = row.Cells[0].Value.ToString();
-                
+                var frm = new frmPinupVoucherDetails(id);
+                frm.ShowDialog();
             }
 
         }

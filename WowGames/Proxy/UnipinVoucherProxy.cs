@@ -16,13 +16,14 @@ namespace WowGames.Proxy
     {
         public readonly string partnerId = ConfigurationManager.AppSettings["UniPinPID"].ToString();
         public readonly string apiUrl = ConfigurationManager.AppSettings["UniPinUrl"].ToString();
+        public readonly string secret = ConfigurationManager.AppSettings["UniPinSecret"].ToString();
         public VoucherListResult GetVoucherList()
         {
             string json = null;
             string resultJson = null;
             string uriPath = "voucher/list";
             var url = $"{apiUrl}{uriPath}";
-            var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var auth = GetSignature(partnerId, timestamp.ToString());
             try
             {
@@ -59,7 +60,7 @@ namespace WowGames.Proxy
             string resultJson = null;
             string uriPath = "voucher/get_stock_count";
             var url = $"{apiUrl}{uriPath}";
-            var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var auth = GetSignature(partnerId, timestamp.ToString());
             try
             {
@@ -97,7 +98,7 @@ namespace WowGames.Proxy
             string resultJson = null;
             string uriPath = "voucher/details";
             var url = $"{apiUrl}{uriPath}";
-            var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var auth = GetSignature(partnerId, timestamp.ToString());
             try
             {
@@ -170,7 +171,7 @@ namespace WowGames.Proxy
             string resultJson = null;
             string uriPath = "voucher/inquiry";
             var url = $"{apiUrl}{uriPath}";
-            var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var auth = GetSignature(partnerId, refNumber);
             try
             {
@@ -239,15 +240,15 @@ namespace WowGames.Proxy
         }
         public string GetSignature(params string[] fields)
         {
-            var value = string.Join("", fields);
-            byte[] keyBytes = Encoding.UTF8.GetBytes("gbwe12241229");
-            byte[] inputBytes = Encoding.UTF8.GetBytes($"{value}gbwe12241229");
-
-            using (HMACSHA256 hmac = new HMACSHA256(keyBytes))
+            var value = string.Join("", fields) + secret;
+            var crypt = new SHA256Managed();
+            var hash = new StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(value));
+            foreach (byte theByte in crypto)
             {
-                byte[] hashBytes = hmac.ComputeHash(inputBytes);
-                return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
+                hash.Append(theByte.ToString("x2"));
             }
+            return hash.ToString();
         }
     }
 }

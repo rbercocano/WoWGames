@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
 using WowGames.Models.TopUp;
+using System.Linq;
 
 namespace WowGames.Proxy
 {
@@ -16,13 +17,16 @@ namespace WowGames.Proxy
     {
         public readonly string partnerId = ConfigurationManager.AppSettings["UniPinPID"].ToString();
         public readonly string apiUrl = ConfigurationManager.AppSettings["UniPinUrl"].ToString();
+        public readonly string secret = ConfigurationManager.AppSettings["UniPinSecret"].ToString();
+        public readonly string userid = ConfigurationManager.AppSettings["UniPinUserId"].ToString();
+        public readonly string zoneid = ConfigurationManager.AppSettings["UniPinZoneId"].ToString();
         public GamesListResult GetGameList()
         {
             string json = null;
             string resultJson = null;
             string uriPath = "in-game-topup/list";
             var url = $"{apiUrl}{uriPath}";
-            var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var auth = GetAuth(uriPath, timestamp);
             try
             {
@@ -64,7 +68,7 @@ namespace WowGames.Proxy
             string resultJson = null;
             string uriPath = "in-game-topup/detail";
             var url = $"{apiUrl}{uriPath}";
-            var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var auth = GetAuth(uriPath, timestamp);
             try
             {
@@ -106,7 +110,7 @@ namespace WowGames.Proxy
             string resultJson = null;
             string uriPath = "in-game-topup/order/create";
             var url = $"{apiUrl}{uriPath}";
-            var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var auth = GetAuth(uriPath, timestamp);
             try
             {
@@ -144,11 +148,18 @@ namespace WowGames.Proxy
         }
         public ValidateUserResult ValidateUser(string gameCode, List<Field> fields)
         {
+            var dicFields = new Dictionary<string, string>();
+            if (fields.Any(f => f.Name == "userid"))
+                dicFields["userid"] = userid;
+
+            if (fields.Any(f => f.Name == "zoneid"))
+                dicFields["zoneid"] = zoneid;
+
             string json = null;
             string resultJson = null;
             string uriPath = "in-game-topup/user/validate";
             var url = $"{apiUrl}{uriPath}";
-            var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var auth = GetAuth(uriPath, timestamp);
             try
             {
@@ -161,7 +172,7 @@ namespace WowGames.Proxy
                     client.DefaultRequestHeaders.Add("auth", auth);
 
                     var contractResolver = new DefaultContractResolver { NamingStrategy = new CamelCaseNamingStrategy() };
-                    json = JsonConvert.SerializeObject(new { game_code = gameCode, fields }, new JsonSerializerSettings { ContractResolver = contractResolver });
+                    json = JsonConvert.SerializeObject(new { game_code = gameCode, fields = dicFields }, new JsonSerializerSettings { ContractResolver = contractResolver });
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
                     var resp = client.PostAsync(url, content).Result;
                     resultJson = resp.Content.ReadAsStringAsync().Result;
@@ -190,7 +201,7 @@ namespace WowGames.Proxy
             string resultJson = null;
             string uriPath = "in-game-topup/order/inquiry";
             var url = $"{apiUrl}{uriPath}";
-            var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var auth = GetAuth(uriPath, timestamp);
             try
             {
@@ -228,10 +239,8 @@ namespace WowGames.Proxy
         }
         public string GetAuth(string path, long timestamp)
         {
-            byte[] keyBytes = Encoding.UTF8.GetBytes("gbwe12241229");
             byte[] inputBytes = Encoding.UTF8.GetBytes($"{partnerId}{timestamp}{path}");
-
-            using (HMACSHA256 hmac = new HMACSHA256(keyBytes))
+            using (var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(secret)))
             {
                 byte[] hashBytes = hmac.ComputeHash(inputBytes);
                 return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();

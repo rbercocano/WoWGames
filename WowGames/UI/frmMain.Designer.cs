@@ -45,14 +45,14 @@
             this.gameOrderInquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDeVouchersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueVouchersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voucherInquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voucherBalanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sKUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.voucherInquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.voucherBalanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,6 +199,21 @@
             this.estoqueVouchersToolStripMenuItem.Name = "estoqueVouchersToolStripMenuItem";
             this.estoqueVouchersToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.estoqueVouchersToolStripMenuItem.Text = "Vouchers Stock";
+            this.estoqueVouchersToolStripMenuItem.Click += new System.EventHandler(this.estoqueVouchersToolStripMenuItem_Click);
+            // 
+            // voucherInquiryToolStripMenuItem
+            // 
+            this.voucherInquiryToolStripMenuItem.Name = "voucherInquiryToolStripMenuItem";
+            this.voucherInquiryToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.voucherInquiryToolStripMenuItem.Text = "Voucher Inquiry";
+            this.voucherInquiryToolStripMenuItem.Click += new System.EventHandler(this.voucherInquiryToolStripMenuItem_Click);
+            // 
+            // voucherBalanceToolStripMenuItem
+            // 
+            this.voucherBalanceToolStripMenuItem.Name = "voucherBalanceToolStripMenuItem";
+            this.voucherBalanceToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.voucherBalanceToolStripMenuItem.Text = "Voucher Balance";
+            this.voucherBalanceToolStripMenuItem.Click += new System.EventHandler(this.voucherBalanceToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
@@ -247,20 +262,6 @@
             this.sKUToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.sKUToolStripMenuItem.Text = "SKU";
             this.sKUToolStripMenuItem.Click += new System.EventHandler(this.sKUToolStripMenuItem_Click);
-            // 
-            // voucherInquiryToolStripMenuItem
-            // 
-            this.voucherInquiryToolStripMenuItem.Name = "voucherInquiryToolStripMenuItem";
-            this.voucherInquiryToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.voucherInquiryToolStripMenuItem.Text = "Voucher Inquiry";
-            this.voucherInquiryToolStripMenuItem.Click += new System.EventHandler(this.voucherInquiryToolStripMenuItem_Click);
-            // 
-            // voucherBalanceToolStripMenuItem
-            // 
-            this.voucherBalanceToolStripMenuItem.Name = "voucherBalanceToolStripMenuItem";
-            this.voucherBalanceToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.voucherBalanceToolStripMenuItem.Text = "Voucher Balance";
-            this.voucherBalanceToolStripMenuItem.Click += new System.EventHandler(this.voucherBalanceToolStripMenuItem_Click);
             // 
             // frmMain
             // 

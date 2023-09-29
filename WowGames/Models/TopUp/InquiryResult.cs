@@ -13,7 +13,7 @@ namespace WowGames.Models.TopUp
         [JsonProperty("currency")]
         public string Currency { get; set; }
         [JsonProperty("amount")]
-        public int Amount { get; set; }
+        public double Amount { get; set; }
         [JsonProperty("reference_no")]
         public string RefNumber { get; set; }
         [JsonProperty("transaction_number")]

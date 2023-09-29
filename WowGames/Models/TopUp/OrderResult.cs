@@ -9,7 +9,7 @@ namespace WowGames.Models.TopUp
         [JsonProperty("reference_no")]
         public string Ref { get; set; }
         [JsonProperty("amount")]
-        public int Amount { get; set; }
+        public double Amount { get; set; }
         [JsonProperty("currency")]
         public string Currency { get; set; }
         [JsonProperty("item_name")]

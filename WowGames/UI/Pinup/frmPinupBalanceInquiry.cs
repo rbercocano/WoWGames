@@ -21,7 +21,7 @@ namespace WowGames
             var inquiry = proxy.InquiryBalance();
             if (inquiry.Status == 1)
             {
-                lblBalance.Text = (Convert.ToDecimal(inquiry.Balance) / 100).ToString(CultureInfo.InvariantCulture);
+                lblBalance.Text = inquiry.Balance.ToString(CultureInfo.InvariantCulture);
             }
             else
             {

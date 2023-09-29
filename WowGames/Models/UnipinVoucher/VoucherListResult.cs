@@ -7,7 +7,7 @@ namespace WowGames.Models.UnipinVoucher
     {
         [JsonProperty("voucher_list")]
         public List<VoucherList> Vouchers { get; set; }
-        [JsonProperty("voucher_list")]
+        [JsonProperty("status")]
         public int Status { get; set; }
     }
 

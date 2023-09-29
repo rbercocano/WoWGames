@@ -35,7 +35,7 @@ namespace WowGames
             dgProdutos.ColumnCount = 5;
             dgProdutos.Columns[0].Visible = false;
             dgProdutos.Columns[0].HeaderText = "Id";
-            dgProdutos.Columns[0].DataPropertyName = "Codigo";
+            dgProdutos.Columns[0].DataPropertyName = "Id";
 
             dgProdutos.Columns[1].Visible = true;
             dgProdutos.Columns[1].HeaderText = "Nome";
@@ -98,23 +98,30 @@ namespace WowGames
                 var row = senderGrid.Rows[e.RowIndex];
                 var validationResult = proxy.ValidateUser(code, gameDetails.Fields);
                 var id = row.Cells[0].Value.ToString();
+                var name = row.Cells[1].Value.ToString();
+                if (string.IsNullOrEmpty(validationResult.ValidationToken))
+                {
+                    MessageBox.Show("Erro ao gerar token de validaçao para compra", "Erro");
+                    return;
+                }
                 var orderResult = proxy.CreateOrder(code, validationResult.ValidationToken, Guid.NewGuid().ToString(), id);
                 if (orderResult.Status == 1)
                 {
                     repository.Add(new Purchase
                     {
                         Receipt = string.Empty,
-                        PartnerId = 4,
+                        PartnerId = 5,
                         PurchaseDate = DateTime.Now,
                         TransactionId = orderResult.TransactionId,
                         Serial = orderResult.Ref,
                         Token = orderResult.Ref,
-                        PaidPrice = (Convert.ToDecimal(orderResult.Amount) / 100).ToString(CultureInfo.InvariantCulture),
-                        SuggestedPrice = (Convert.ToDecimal(orderResult.Amount) / 100).ToString(CultureInfo.InvariantCulture),
+                        PaidPrice = orderResult.Amount.ToString(CultureInfo.InvariantCulture),
+                        SuggestedPrice = "",
                         Sku = orderResult.Ref,
                         Cancelled = false,
                         Limit = string.Empty
                     });
+                    MessageBox.Show($"Compra efetuada com sucesso. Game: {name}", "Sucesso");
                 }
                 else
                     MessageBox.Show(orderResult.Reason, "Erro");
